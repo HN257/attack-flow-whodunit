@@ -1,0 +1,732 @@
+{
+  "type": "bundle",
+  "id": "bundle--97ae0fb7-7cc5-43e5-beb4-aea197458cbd",
+  "spec_version": "2.1",
+  "created": "2023-01-05T12:41:31.384Z",
+  "modified": "2023-01-05T12:41:31.384Z",
+  "objects": [
+    {
+      "type": "extension-definition",
+      "id": "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4",
+      "spec_version": "2.1",
+      "created": "2022-08-02T19:34:35.143Z",
+      "modified": "2022-08-02T19:34:35.143Z",
+      "name": "Attack Flow",
+      "description": "Extends STIX 2.1 with features to create Attack Flows.",
+      "created_by_ref": "identity--fb9c968a-745b-4ade-9b25-c324172197f4",
+      "schema": "https://center-for-threat-informed-defense.github.io/attack-flow/stix/attack-flow-schema-2.0.0.json",
+      "version": "2.0.0",
+      "extension_types": [
+        "new-sdo"
+      ],
+      "external_references": [
+        {
+          "source_name": "Documentation",
+          "description": "Documentation for Attack Flow",
+          "url": "https://center-for-threat-informed-defense.github.io/attack-flow"
+        },
+        {
+          "source_name": "GitHub",
+          "description": "Source code repository for Attack Flow",
+          "url": "https://github.com/center-for-threat-informed-defense/attack-flow"
+        }
+      ]
+    },
+    {
+      "type": "identity",
+      "id": "identity--fb9c968a-745b-4ade-9b25-c324172197f4",
+      "spec_version": "2.1",
+      "created": "2022-08-02T19:34:35.143Z",
+      "modified": "2022-08-02T19:34:35.143Z",
+      "create_by_ref": "identity--fb9c968a-745b-4ade-9b25-c324172197f4",
+      "name": "MITRE Engenuity Center for Threat-Informed Defense",
+      "identity_class": "organization"
+    },
+    {
+      "type": "attack-flow",
+      "id": "attack-flow--e783aec3-9b0a-46fa-9a14-cb5275efccf0",
+      "spec_version": "2.1",
+      "created": "2023-01-01T01:51:38.878Z",
+      "modified": "2023-01-05T12:41:31.385Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "created_by_ref": "identity--ccfc1137-dcc0-4f1f-ab53-bcab8de081af",
+      "start_refs": [
+        "attack-condition--65d45d06-0653-4494-8073-bedc84ae7e0d"
+      ],
+      "name": "network-infrastructure-devicesent",
+      "scope": "incident",
+      "external_references": []
+    },
+    {
+      "type": "identity",
+      "id": "identity--ccfc1137-dcc0-4f1f-ab53-bcab8de081af",
+      "spec_version": "2.1",
+      "created": "2023-01-05T12:41:31.385Z",
+      "modified": "2023-01-05T12:41:31.385Z"
+    },
+    {
+      "type": "attack-condition",
+      "id": "attack-condition--65d45d06-0653-4494-8073-bedc84ae7e0d",
+      "spec_version": "2.1",
+      "created": "2023-01-05T12:41:31.385Z",
+      "modified": "2023-01-05T12:41:31.385Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "description": "Network Devices, publicly accessible are compromised",
+      "on_true_refs": [
+        "attack-action--cc5595ac-a988-438a-8d66-d706ae81a9e1"
+      ]
+    },
+    {
+      "type": "attack-action",
+      "id": "attack-action--cc5595ac-a988-438a-8d66-d706ae81a9e1",
+      "spec_version": "2.1",
+      "created": "2023-01-05T12:41:31.385Z",
+      "modified": "2023-01-05T12:41:31.385Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "Exploit Public-Facing Application",
+      "technique_id": "T1190",
+      "technique_ref": "https://attack.mitre.org/techniques/T1190/",
+      "description": "Take advantage of a weakness in an Internet-facing computer or program including standard services (like SSH), network device administration and management protocols (like SNMP and Smart Install), and any other applications with Internet accessible open sockets.",
+      "asset_refs": [
+        "attack-asset--6cdca822-74b2-4ad7-84dc-72377338570a",
+        "attack-asset--ae403444-c959-45e3-8f18-987efe0cbbdb",
+        "attack-asset--01372585-49d7-4ebe-a515-37f9996b7d83",
+        "attack-asset--6db601e3-269a-4f70-89a7-92c0039eee46"
+      ],
+      "effect_refs": [
+        "attack-action--6c1e244a-ac3f-43e7-b586-16ee8b4c4a85"
+      ]
+    },
+    {
+      "type": "attack-asset",
+      "id": "attack-asset--6cdca822-74b2-4ad7-84dc-72377338570a",
+      "spec_version": "2.1",
+      "created": "2023-01-05T12:41:31.385Z",
+      "modified": "2023-01-05T12:41:31.385Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "unencrypted"
+    },
+    {
+      "type": "attack-asset",
+      "id": "attack-asset--ae403444-c959-45e3-8f18-987efe0cbbdb",
+      "spec_version": "2.1",
+      "created": "2023-01-05T12:41:31.385Z",
+      "modified": "2023-01-05T12:41:31.385Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "unauthenticated"
+    },
+    {
+      "type": "attack-asset",
+      "id": "attack-asset--01372585-49d7-4ebe-a515-37f9996b7d83",
+      "spec_version": "2.1",
+      "created": "2023-01-05T12:41:31.385Z",
+      "modified": "2023-01-05T12:41:31.385Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "insufficiently hardened"
+    },
+    {
+      "type": "attack-asset",
+      "id": "attack-asset--6db601e3-269a-4f70-89a7-92c0039eee46",
+      "spec_version": "2.1",
+      "created": "2023-01-05T12:41:31.385Z",
+      "modified": "2023-01-05T12:41:31.385Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "end-of-life"
+    },
+    {
+      "type": "attack-action",
+      "id": "attack-action--6c1e244a-ac3f-43e7-b586-16ee8b4c4a85",
+      "spec_version": "2.1",
+      "created": "2023-01-05T12:41:31.385Z",
+      "modified": "2023-01-05T12:41:31.385Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "Active Scanning: Vulnerability Scanning",
+      "technique_id": "T1595.002",
+      "technique_ref": "https://attack.mitre.org/techniques/T1595/002/",
+      "description": "Scan victims for vulnerabilities (Internet-facing ports and services, conduct device finger[rinting); check if the configuration of a target host/application potentially aligns with the target of a specific exploit the adversary may seek to use",
+      "asset_refs": [
+        "attack-asset--4bd7c18f-1524-4dfb-b574-0699c7daefd1",
+        "attack-asset--d6478f91-a1b9-409e-bb7f-89db6f3741f9"
+      ],
+      "effect_refs": [
+        "attack-action--f7042e3a-8d77-4228-84ab-579894e2c01d"
+      ]
+    },
+    {
+      "type": "attack-asset",
+      "id": "attack-asset--4bd7c18f-1524-4dfb-b574-0699c7daefd1",
+      "spec_version": "2.1",
+      "created": "2023-01-05T12:41:31.385Z",
+      "modified": "2023-01-05T12:41:31.385Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "Login banners & data"
+    },
+    {
+      "type": "attack-asset",
+      "id": "attack-asset--d6478f91-a1b9-409e-bb7f-89db6f3741f9",
+      "spec_version": "2.1",
+      "created": "2023-01-05T12:41:31.385Z",
+      "modified": "2023-01-05T12:41:31.385Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "Protocol ports"
+    },
+    {
+      "type": "attack-action",
+      "id": "attack-action--f7042e3a-8d77-4228-84ab-579894e2c01d",
+      "spec_version": "2.1",
+      "created": "2023-01-05T12:41:31.385Z",
+      "modified": "2023-01-05T12:41:31.385Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "Traffic Signaling",
+      "technique_id": "T1205",
+      "technique_ref": "https://attack.mitre.org/techniques/T1205/",
+      "description": "Send specially crafted SNMP and SMI packets to trigger the scanned device to send information to a cyber-actor-controlled host via TFTP/UDP port 69 from external devices",
+      "asset_refs": [
+        "attack-asset--0b4fafd8-c7f1-4f0b-bf62-b84082e57098",
+        "attack-asset--4cfb419e-f18a-45b3-b0c0-5c4a5e333ebc"
+      ],
+      "effect_refs": [
+        "attack-action--82a06b37-d4b3-42ee-892e-63db66b50353",
+        "attack-action--47158ae2-6fd7-4918-9d5f-0696135bfc12",
+        "attack-action--49835d13-a12f-4809-816c-99aaedb8c5ef"
+      ]
+    },
+    {
+      "type": "attack-asset",
+      "id": "attack-asset--0b4fafd8-c7f1-4f0b-bf62-b84082e57098",
+      "spec_version": "2.1",
+      "created": "2023-01-05T12:41:31.385Z",
+      "modified": "2023-01-05T12:41:31.385Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "Director and clients on the same network"
+    },
+    {
+      "type": "attack-asset",
+      "id": "attack-asset--4cfb419e-f18a-45b3-b0c0-5c4a5e333ebc",
+      "spec_version": "2.1",
+      "created": "2023-01-05T12:41:31.385Z",
+      "modified": "2023-01-05T12:41:31.385Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "Device configuration files"
+    },
+    {
+      "type": "attack-action",
+      "id": "attack-action--82a06b37-d4b3-42ee-892e-63db66b50353",
+      "spec_version": "2.1",
+      "created": "2023-01-05T12:41:31.385Z",
+      "modified": "2023-01-05T12:41:31.385Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "Hide Artifacts: Process Argument Spoofing",
+      "technique_id": "T1564.010",
+      "technique_ref": "https://attack.mitre.org/techniques/T1564/010/",
+      "description": "Spoof source address of the SNMP UDP datagram as coming from inside the targeted network"
+    },
+    {
+      "type": "attack-action",
+      "id": "attack-action--47158ae2-6fd7-4918-9d5f-0696135bfc12",
+      "spec_version": "2.1",
+      "created": "2023-01-05T12:41:31.385Z",
+      "modified": "2023-01-05T12:41:31.385Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "Data from Configuration Repository: SNMP (MIB Dump)",
+      "technique_id": "T1602.001",
+      "technique_ref": "https://attack.mitre.org/techniques/T1602/001/",
+      "description": "Collect and/or mine valuable information in a network managed using Simple Network Management Protocol (SNMP)",
+      "asset_refs": [
+        "attack-asset--52ebec9a-f98c-4a8c-a8a5-f15939731ba5",
+        "attack-asset--08d71d8f-95af-44ed-acf4-47ad48a910f3"
+      ]
+    },
+    {
+      "type": "attack-asset",
+      "id": "attack-asset--52ebec9a-f98c-4a8c-a8a5-f15939731ba5",
+      "spec_version": "2.1",
+      "created": "2023-01-05T12:41:31.385Z",
+      "modified": "2023-01-05T12:41:31.385Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "SNMP community strings"
+    },
+    {
+      "type": "attack-asset",
+      "id": "attack-asset--08d71d8f-95af-44ed-acf4-47ad48a910f3",
+      "spec_version": "2.1",
+      "created": "2023-01-05T12:41:31.385Z",
+      "modified": "2023-01-05T12:41:31.385Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "Network information"
+    },
+    {
+      "type": "attack-action",
+      "id": "attack-action--49835d13-a12f-4809-816c-99aaedb8c5ef",
+      "spec_version": "2.1",
+      "created": "2023-01-05T12:41:31.385Z",
+      "modified": "2023-01-05T12:41:31.385Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "Unsecured Credentials: Credentials In Files",
+      "technique_id": "T1552.001",
+      "technique_ref": "https://attack.mitre.org/techniques/T1552/001/",
+      "description": "Search configuration files of a system or service to derive password hash values for legitimate credentials",
+      "asset_refs": [
+        "attack-asset--23287cef-d4fb-409f-9090-0ba6d2db7852"
+      ],
+      "effect_refs": [
+        "attack-action--7cc9a793-a854-44f0-9bda-30f6ea42ebfb",
+        "attack-action--9c5f543e-4623-4ee8-8cce-7c8e4f0f244d",
+        "attack-action--9eb01e6f-b72d-467f-b824-c317fd80922f"
+      ]
+    },
+    {
+      "type": "attack-asset",
+      "id": "attack-asset--23287cef-d4fb-409f-9090-0ba6d2db7852",
+      "spec_version": "2.1",
+      "created": "2023-01-05T12:41:31.385Z",
+      "modified": "2023-01-05T12:41:31.385Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "Legitimate credentials"
+    },
+    {
+      "type": "attack-action",
+      "id": "attack-action--7cc9a793-a854-44f0-9bda-30f6ea42ebfb",
+      "spec_version": "2.1",
+      "created": "2023-01-05T12:41:31.385Z",
+      "modified": "2023-01-05T12:41:31.385Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "Brute Force: Credential Stuffing",
+      "technique_id": "T1110.004",
+      "technique_ref": "https://attack.mitre.org/techniques/T1110/004/",
+      "description": "Use brute-force attacks to obtain Telnet and SSH login credentials",
+      "effect_refs": [
+        "attack-operator--8176934e-a821-4dbe-819d-c75071c8e754"
+      ]
+    },
+    {
+      "type": "attack-action",
+      "id": "attack-action--9c5f543e-4623-4ee8-8cce-7c8e4f0f244d",
+      "spec_version": "2.1",
+      "created": "2023-01-05T12:41:31.385Z",
+      "modified": "2023-01-05T12:41:31.385Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "Valid Accounts",
+      "technique_id": "T1078",
+      "technique_ref": "https://attack.mitre.org/techniques/T1078/",
+      "description": "Use compromised credentials to bypass access controls and increase privilege to specific systems/restricted areas",
+      "effect_refs": [
+        "attack-operator--8176934e-a821-4dbe-819d-c75071c8e754"
+      ]
+    },
+    {
+      "type": "attack-action",
+      "id": "attack-action--9eb01e6f-b72d-467f-b824-c317fd80922f",
+      "spec_version": "2.1",
+      "created": "2023-01-05T12:41:31.385Z",
+      "modified": "2023-01-05T12:41:31.385Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "Use Alternate Authentication Material: Pass the Hash",
+      "technique_id": "T1550.002",
+      "technique_ref": "https://attack.mitre.org/techniques/T1550/002",
+      "description": "Use stolen password hashes to move laterally within an environment, bypassing normal system access controls",
+      "effect_refs": [
+        "attack-operator--8176934e-a821-4dbe-819d-c75071c8e754"
+      ]
+    },
+    {
+      "type": "attack-operator",
+      "id": "attack-operator--8176934e-a821-4dbe-819d-c75071c8e754",
+      "spec_version": "2.1",
+      "created": "2023-01-05T12:41:31.385Z",
+      "modified": "2023-01-05T12:41:31.385Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "operator": "AND",
+      "effect_refs": [
+        "attack-action--ad4a1f89-315d-4f4d-9afd-1337c7786412"
+      ]
+    },
+    {
+      "type": "attack-asset",
+      "id": "attack-asset--9e94b25a-bff6-499f-bd41-edfd477a356b",
+      "spec_version": "2.1",
+      "created": "2023-01-05T12:41:31.385Z",
+      "modified": "2023-01-05T12:41:31.385Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "Telnet/SSH credentials"
+    },
+    {
+      "type": "attack-asset",
+      "id": "attack-asset--c9ee1b97-cc13-4df3-91ae-fe35231d4f3c",
+      "spec_version": "2.1",
+      "created": "2023-01-05T12:41:31.385Z",
+      "modified": "2023-01-05T12:41:31.385Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "Router access"
+    },
+    {
+      "type": "attack-action",
+      "id": "attack-action--ad4a1f89-315d-4f4d-9afd-1337c7786412",
+      "spec_version": "2.1",
+      "created": "2023-01-05T12:41:31.385Z",
+      "modified": "2023-01-05T12:41:31.385Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "Remote Services",
+      "technique_id": "T1021",
+      "technique_ref": "https://attack.mitre.org/techniques/T1021/",
+      "description": "Use Valid Accounts to authenticate into the device as a privileged user via remote management services",
+      "asset_refs": [
+        "attack-asset--9cd7387d-0e4c-4ab1-91c8-5844cb312e97",
+        "attack-asset--cbecbbe1-a847-433a-bb33-5fefdaa0fd32",
+        "attack-asset--4e85e49e-eeec-40d7-99d9-44c30b852301"
+      ],
+      "effect_refs": [
+        "attack-action--2e81bd08-a557-4e5b-be93-17f7b452a27e"
+      ]
+    },
+    {
+      "type": "attack-asset",
+      "id": "attack-asset--9cd7387d-0e4c-4ab1-91c8-5844cb312e97",
+      "spec_version": "2.1",
+      "created": "2023-01-05T12:41:31.385Z",
+      "modified": "2023-01-05T12:41:31.385Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "Remote install and configure device enabled"
+    },
+    {
+      "type": "attack-asset",
+      "id": "attack-asset--cbecbbe1-a847-433a-bb33-5fefdaa0fd32",
+      "spec_version": "2.1",
+      "created": "2023-01-05T12:41:31.385Z",
+      "modified": "2023-01-05T12:41:31.385Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "Smart Install Exploitation Tool (SIET)"
+    },
+    {
+      "type": "attack-action",
+      "id": "attack-action--2e81bd08-a557-4e5b-be93-17f7b452a27e",
+      "spec_version": "2.1",
+      "created": "2023-01-05T12:41:31.385Z",
+      "modified": "2023-01-05T12:41:31.385Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "Software Deployment Tools",
+      "technique_id": "T1072",
+      "technique_ref": "https://attack.mitre.org/techniques/T1072/",
+      "description": "Gain access to and take advantages of the unauthenticated SMI design installed within the enterprise network; leveraged",
+      "asset_refs": [
+        "attack-asset--dd6b2331-e7af-4c9a-aa7b-951043341678",
+        "attack-asset--70dd3f73-1723-4968-bcc1-98ca14d52b43"
+      ],
+      "effect_refs": [
+        "attack-action--3556bdad-aae4-40b0-9ee7-052c9a0d8c0e"
+      ]
+    },
+    {
+      "type": "attack-asset",
+      "id": "attack-asset--4e85e49e-eeec-40d7-99d9-44c30b852301",
+      "spec_version": "2.1",
+      "created": "2023-01-05T12:41:31.385Z",
+      "modified": "2023-01-05T12:41:31.385Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "SMI supported Cisco switch/router"
+    },
+    {
+      "type": "attack-asset",
+      "id": "attack-asset--dd6b2331-e7af-4c9a-aa7b-951043341678",
+      "spec_version": "2.1",
+      "created": "2023-01-05T12:41:31.385Z",
+      "modified": "2023-01-05T12:41:31.385Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "SMI supported Cisco switch/router"
+    },
+    {
+      "type": "attack-asset",
+      "id": "attack-asset--70dd3f73-1723-4968-bcc1-98ca14d52b43",
+      "spec_version": "2.1",
+      "created": "2023-01-05T12:41:31.385Z",
+      "modified": "2023-01-05T12:41:31.385Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "Leverage capability"
+    },
+    {
+      "type": "attack-action",
+      "id": "attack-action--3556bdad-aae4-40b0-9ee7-052c9a0d8c0e",
+      "spec_version": "2.1",
+      "created": "2023-01-05T12:41:31.385Z",
+      "modified": "2023-01-05T12:41:31.385Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "Create or Modify System Process",
+      "technique_id": "T1543",
+      "technique_ref": "https://attack.mitre.org/techniques/T1543/",
+      "description": "Modify the device configurations; upload maliciously modified OS or firmware",
+      "asset_refs": [
+        "attack-asset--c2b81aef-9ddc-48db-90b7-22e957acd133",
+        "attack-asset--caa68867-e1c3-43d2-aa2b-a40cd51abef0"
+      ],
+      "effect_refs": [
+        "attack-action--54581779-0228-45bb-b64d-cc5f2fcb52da"
+      ]
+    },
+    {
+      "type": "attack-asset",
+      "id": "attack-asset--c2b81aef-9ddc-48db-90b7-22e957acd133",
+      "spec_version": "2.1",
+      "created": "2023-01-05T12:41:31.385Z",
+      "modified": "2023-01-05T12:41:31.385Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "Writeable file structures to store malware"
+    },
+    {
+      "type": "attack-asset",
+      "id": "attack-asset--caa68867-e1c3-43d2-aa2b-a40cd51abef0",
+      "spec_version": "2.1",
+      "created": "2023-01-05T12:41:31.385Z",
+      "modified": "2023-01-05T12:41:31.385Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "Privileged command execution"
+    },
+    {
+      "type": "attack-action",
+      "id": "attack-action--54581779-0228-45bb-b64d-cc5f2fcb52da",
+      "spec_version": "2.1",
+      "created": "2023-01-05T12:41:31.385Z",
+      "modified": "2023-01-05T12:41:31.385Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "Adversary-in-the-Middle",
+      "technique_id": "T1557",
+      "technique_ref": "https://attack.mitre.org/techniques/T1557/",
+      "description": "Create man-in-the-middle scenarios",
+      "asset_refs": [
+        "attack-asset--2afb8c7f-13d3-41d2-ac81-2f8cdb15115e",
+        "attack-asset--670e73c8-619a-49df-ad7e-5813d02015bc",
+        "attack-asset--0c6ceb7f-e156-48e4-a032-f81bf36d67f6",
+        "attack-asset--90f4803d-be15-4898-8369-fdb7863106dc",
+        "attack-asset--76d7d434-4446-4ee6-b106-67f3ea1a3548"
+      ]
+    },
+    {
+      "type": "attack-asset",
+      "id": "attack-asset--2afb8c7f-13d3-41d2-ac81-2f8cdb15115e",
+      "spec_version": "2.1",
+      "created": "2023-01-05T12:41:31.385Z",
+      "modified": "2023-01-05T12:41:31.385Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "Additional configuration information extraction"
+    },
+    {
+      "type": "attack-asset",
+      "id": "attack-asset--670e73c8-619a-49df-ad7e-5813d02015bc",
+      "spec_version": "2.1",
+      "created": "2023-01-05T12:41:31.385Z",
+      "modified": "2023-01-05T12:41:31.385Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "OS image file export to external FTP server"
+    },
+    {
+      "type": "attack-asset",
+      "id": "attack-asset--0c6ceb7f-e156-48e4-a032-f81bf36d67f6",
+      "spec_version": "2.1",
+      "created": "2023-01-05T12:41:31.385Z",
+      "modified": "2023-01-05T12:41:31.385Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "Device configurations modification"
+    },
+    {
+      "type": "attack-asset",
+      "id": "attack-asset--90f4803d-be15-4898-8369-fdb7863106dc",
+      "spec_version": "2.1",
+      "created": "2023-01-05T12:41:31.385Z",
+      "modified": "2023-01-05T12:41:31.385Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "Generic Routing Encapsulation (GRE) tunnels creation"
+    },
+    {
+      "type": "attack-asset",
+      "id": "attack-asset--76d7d434-4446-4ee6-b106-67f3ea1a3548",
+      "spec_version": "2.1",
+      "created": "2023-01-05T12:41:31.385Z",
+      "modified": "2023-01-05T12:41:31.385Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "Mirror or redirect network traffic"
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--f58604b8-89d6-40e4-8772-2dd4717ea23b",
+      "spec_version": "2.1",
+      "created": "2023-01-05T12:41:31.386Z",
+      "modified": "2023-01-05T12:41:31.386Z",
+      "relationship_type": "related-to",
+      "source_ref": "attack-operator--8176934e-a821-4dbe-819d-c75071c8e754",
+      "target_ref": "attack-asset--9e94b25a-bff6-499f-bd41-edfd477a356b"
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--7ac321cf-68ae-41bb-b1d4-f7051eddd705",
+      "spec_version": "2.1",
+      "created": "2023-01-05T12:41:31.386Z",
+      "modified": "2023-01-05T12:41:31.386Z",
+      "relationship_type": "related-to",
+      "source_ref": "attack-operator--8176934e-a821-4dbe-819d-c75071c8e754",
+      "target_ref": "attack-asset--c9ee1b97-cc13-4df3-91ae-fe35231d4f3c"
+    }
+  ]
+}

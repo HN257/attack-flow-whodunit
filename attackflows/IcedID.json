@@ -1,0 +1,359 @@
+{
+  "type": "bundle",
+  "id": "bundle--a06a01d3-cc07-453e-9739-bbeb40234807",
+  "spec_version": "2.1",
+  "created": "2023-01-06T05:21:44.234Z",
+  "modified": "2023-01-06T05:21:44.234Z",
+  "objects": [
+    {
+      "type": "extension-definition",
+      "id": "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4",
+      "spec_version": "2.1",
+      "created": "2022-08-02T19:34:35.143Z",
+      "modified": "2022-08-02T19:34:35.143Z",
+      "name": "Attack Flow",
+      "description": "Extends STIX 2.1 with features to create Attack Flows.",
+      "created_by_ref": "identity--fb9c968a-745b-4ade-9b25-c324172197f4",
+      "schema": "https://center-for-threat-informed-defense.github.io/attack-flow/stix/attack-flow-schema-2.0.0.json",
+      "version": "2.0.0",
+      "extension_types": [
+        "new-sdo"
+      ],
+      "external_references": [
+        {
+          "source_name": "Documentation",
+          "description": "Documentation for Attack Flow",
+          "url": "https://center-for-threat-informed-defense.github.io/attack-flow"
+        },
+        {
+          "source_name": "GitHub",
+          "description": "Source code repository for Attack Flow",
+          "url": "https://github.com/center-for-threat-informed-defense/attack-flow"
+        }
+      ]
+    },
+    {
+      "type": "identity",
+      "id": "identity--fb9c968a-745b-4ade-9b25-c324172197f4",
+      "spec_version": "2.1",
+      "created": "2022-08-02T19:34:35.143Z",
+      "modified": "2022-08-02T19:34:35.143Z",
+      "create_by_ref": "identity--fb9c968a-745b-4ade-9b25-c324172197f4",
+      "name": "MITRE Engenuity Center for Threat-Informed Defense",
+      "identity_class": "organization"
+    },
+    {
+      "type": "attack-flow",
+      "id": "attack-flow--1f51b1d4-1949-4ab6-bc8c-3685edcb7e2e",
+      "spec_version": "2.1",
+      "created": "2023-01-06T03:15:32.190Z",
+      "modified": "2023-01-06T05:21:44.234Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "created_by_ref": "identity--301edc56-5f43-435a-a30c-c7bcd5c5239f",
+      "start_refs": [
+        "attack-action--bbcc55d9-7eea-4fde-90d9-984ee65e7c0c"
+      ],
+      "name": "IcedID",
+      "scope": "incident",
+      "external_references": []
+    },
+    {
+      "type": "identity",
+      "id": "identity--301edc56-5f43-435a-a30c-c7bcd5c5239f",
+      "spec_version": "2.1",
+      "created": "2023-01-06T05:21:44.234Z",
+      "modified": "2023-01-06T05:21:44.234Z"
+    },
+    {
+      "type": "attack-action",
+      "id": "attack-action--bbcc55d9-7eea-4fde-90d9-984ee65e7c0c",
+      "spec_version": "2.1",
+      "created": "2023-01-06T05:21:44.234Z",
+      "modified": "2023-01-06T05:21:44.234Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "Phishing- Infection technique",
+      "technique_id": "T1566",
+      "technique_ref": "https://attack.mitre.org/techniques/T1566/",
+      "description": "Dropped as a secondary payload from other malware, most notably Emotet.",
+      "effect_refs": [
+        "attack-action--09297fc0-fc62-47f0-9d2d-2b9c5b801d3f"
+      ]
+    },
+    {
+      "type": "attack-action",
+      "id": "attack-action--09297fc0-fc62-47f0-9d2d-2b9c5b801d3f",
+      "spec_version": "2.1",
+      "created": "2023-01-06T05:21:44.234Z",
+      "modified": "2023-01-06T05:21:44.234Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "Process Injection- Detection Evasion",
+      "technique_id": "T1055",
+      "technique_ref": "https://attack.mitre.org/techniques/T1055/",
+      "description": "IcedID injects itself directly into the OS memory and regular processes. Malware actors are known to update IcedID to increase persistence and evade new detection efforts.",
+      "effect_refs": [
+        "attack-action--b718771d-bec2-4d7a-8ad5-60c71465dd8e"
+      ]
+    },
+    {
+      "type": "attack-action",
+      "id": "attack-action--b718771d-bec2-4d7a-8ad5-60c71465dd8e",
+      "spec_version": "2.1",
+      "created": "2023-01-06T05:21:44.234Z",
+      "modified": "2023-01-06T05:21:44.234Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "Process Hollowing",
+      "technique_id": "T1055.012",
+      "technique_ref": "https://attack.mitre.org/techniques/T1055/012/",
+      "description": "IcedID hooks several APIs (eg “ntdll!ZwCreateUserProcess” and “ntdll!RtlExitUserProcess\"), and then removes the hooking code and creates a service host process \"svchost.exe\".",
+      "effect_refs": [
+        "attack-action--079c56d6-e10e-4fdc-989f-56546fce5c0f",
+        "attack-action--4278eb95-8eb1-440e-95c3-d06dadfc6882",
+        "attack-action--72ed2c25-cfd3-45b6-bb44-592e180d4481"
+      ],
+      "asset_refs": [
+        "attack-asset--7b04b94e-06f9-46e4-bb16-c6b347c1ee0a"
+      ]
+    },
+    {
+      "type": "attack-action",
+      "id": "attack-action--079c56d6-e10e-4fdc-989f-56546fce5c0f",
+      "spec_version": "2.1",
+      "created": "2023-01-06T05:21:44.234Z",
+      "modified": "2023-01-06T05:21:44.234Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "Boot or Logon Autostart Execution",
+      "technique_id": "T1547",
+      "technique_ref": "https://attack.mitre.org/techniques/T1547",
+      "description": "allows the malware to execute its binary every time the system reboots.",
+      "effect_refs": [
+        "attack-action--16b07d02-6178-443f-9f59-d64802d183ab"
+      ]
+    },
+    {
+      "type": "attack-action",
+      "id": "attack-action--4278eb95-8eb1-440e-95c3-d06dadfc6882",
+      "spec_version": "2.1",
+      "created": "2023-01-06T05:21:44.234Z",
+      "modified": "2023-01-06T05:21:44.234Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "Create or Modify System Process- Command and Scripting Interpreter (T1059) Writing payload into system",
+      "technique_id": "T1543",
+      "technique_ref": "https://attack.mitre.org/techniques/T1543/",
+      "description": "IcedID writes the payload into “%ProgramData%” or “%AppData%” folder (depending on user privileges).",
+      "effect_refs": [
+        "attack-action--16b07d02-6178-443f-9f59-d64802d183ab"
+      ]
+    },
+    {
+      "type": "attack-action",
+      "id": "attack-action--72ed2c25-cfd3-45b6-bb44-592e180d4481",
+      "spec_version": "2.1",
+      "created": "2023-01-06T05:21:44.234Z",
+      "modified": "2023-01-06T05:21:44.234Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "Process Injection- Dynamic-link Library Injection- Writing into system",
+      "technique_id": "T1055.001",
+      "technique_ref": "https://attack.mitre.org/techniques/T1055/001/",
+      "description": "IcedID writes itself into “KERNEL32.DLL” and “SHLWAPI.DLL.” also creates 3 additional svchost.exe subprocesses to hold its shellcode.",
+      "effect_refs": [
+        "attack-action--16b07d02-6178-443f-9f59-d64802d183ab"
+      ]
+    },
+    {
+      "type": "attack-action",
+      "id": "attack-action--16b07d02-6178-443f-9f59-d64802d183ab",
+      "spec_version": "2.1",
+      "created": "2023-01-06T05:21:44.234Z",
+      "modified": "2023-01-06T05:21:44.234Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "System Shutdown/Reboot",
+      "technique_id": "T1529",
+      "technique_ref": "https://attack.mitre.org/techniques/T1529/",
+      "description": "Initiates main module after system reboot.",
+      "effect_refs": [
+        "attack-action--441ff670-7d6f-4179-adfa-97c83b1144a6",
+        "attack-action--867e6f53-62ee-4fa1-9383-5c3d222b92c6"
+      ]
+    },
+    {
+      "type": "attack-action",
+      "id": "attack-action--441ff670-7d6f-4179-adfa-97c83b1144a6",
+      "spec_version": "2.1",
+      "created": "2023-01-06T05:21:44.234Z",
+      "modified": "2023-01-06T05:21:44.234Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "Process Injection",
+      "technique_id": "T1055",
+      "technique_ref": "https://attack.mitre.org/techniques/T1055/",
+      "description": "When web browser opens, identify browser type, and inject shellcode into the application.",
+      "asset_refs": [
+        "attack-asset--b2b3b8dd-b6a3-4a53-b360-25870fb65ebf",
+        "attack-asset--ebc3e913-1c32-4729-92ce-23c49af6256a"
+      ],
+      "effect_refs": [
+        "attack-action--dbd801a2-f6b4-40dc-9ae6-6dcf28a580ff"
+      ]
+    },
+    {
+      "type": "attack-action",
+      "id": "attack-action--867e6f53-62ee-4fa1-9383-5c3d222b92c6",
+      "spec_version": "2.1",
+      "created": "2023-01-06T05:21:44.234Z",
+      "modified": "2023-01-06T05:21:44.234Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "Reflective Code Loading",
+      "technique_id": "T1620",
+      "technique_ref": "https://attack.mitre.org/techniques/T1620/",
+      "description": "allocates memory to the target process and injects its shellcode. After the injection of its shellcode, IcedID applies a patch to the “NtWaitForSingleObject” function, which modifies the browser’s protection status.",
+      "asset_refs": [
+        "attack-asset--7dc63d50-ebd7-4bfb-9939-611f0232c6b1"
+      ]
+    },
+    {
+      "type": "attack-asset",
+      "id": "attack-asset--b2b3b8dd-b6a3-4a53-b360-25870fb65ebf",
+      "spec_version": "2.1",
+      "created": "2023-01-06T05:21:44.234Z",
+      "modified": "2023-01-06T05:21:44.234Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "collection of information without detection"
+    },
+    {
+      "type": "attack-asset",
+      "id": "attack-asset--ebc3e913-1c32-4729-92ce-23c49af6256a",
+      "spec_version": "2.1",
+      "created": "2023-01-06T05:21:44.234Z",
+      "modified": "2023-01-06T05:21:44.234Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "victim activity"
+    },
+    {
+      "type": "attack-action",
+      "id": "attack-action--dbd801a2-f6b4-40dc-9ae6-6dcf28a580ff",
+      "spec_version": "2.1",
+      "created": "2023-01-06T05:21:44.234Z",
+      "modified": "2023-01-06T05:21:44.234Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "Proxy- Internal Proxy",
+      "technique_id": "T1090.001",
+      "technique_ref": "https://attack.mitre.org/techniques/T1090/001/",
+      "description": "redirects traffic to an IcedID proxy server. creates another svchost.exe.",
+      "effect_refs": [
+        "attack-action--6ed72ee9-c493-4f02-979e-3ed303ba6ef1"
+      ]
+    },
+    {
+      "type": "attack-action",
+      "id": "attack-action--6ed72ee9-c493-4f02-979e-3ed303ba6ef1",
+      "spec_version": "2.1",
+      "created": "2023-01-06T05:21:44.234Z",
+      "modified": "2023-01-06T05:21:44.234Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "Proxy",
+      "technique_id": "T1090",
+      "technique_ref": "https://attack.mitre.org/techniques/T1090/",
+      "description": "The additional “svchost.exe” is used to create instructions for setting the IP address with a new port number. The proxy server then begins receiving all browsing traffic. ",
+      "effect_refs": [
+        "attack-action--f6c1be5d-cba8-4271-992b-fffe8667fdef"
+      ]
+    },
+    {
+      "type": "attack-action",
+      "id": "attack-action--f6c1be5d-cba8-4271-992b-fffe8667fdef",
+      "spec_version": "2.1",
+      "created": "2023-01-06T05:21:44.234Z",
+      "modified": "2023-01-06T05:21:44.234Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "Exfiltration Over C2 Channel",
+      "technique_id": "T1041",
+      "technique_ref": "https://attack.mitre.org/techniques/T1041/",
+      "description": "Upon identification of sensitive/specific data, it is sent from victim network to attacker C2 server."
+    },
+    {
+      "type": "attack-asset",
+      "id": "attack-asset--7dc63d50-ebd7-4bfb-9939-611f0232c6b1",
+      "spec_version": "2.1",
+      "created": "2023-01-06T05:21:44.234Z",
+      "modified": "2023-01-06T05:21:44.234Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "detection evasion"
+    },
+    {
+      "type": "attack-asset",
+      "id": "attack-asset--7b04b94e-06f9-46e4-bb16-c6b347c1ee0a",
+      "spec_version": "2.1",
+      "created": "2023-01-06T05:21:44.234Z",
+      "modified": "2023-01-06T05:21:44.234Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "establishes persistence"
+    }
+  ]
+}

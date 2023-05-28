@@ -1,0 +1,247 @@
+{
+  "type": "bundle",
+  "id": "bundle--a842c83b-d61b-43f8-ba28-b627811a5bb1",
+  "spec_version": "2.1",
+  "created": "2023-01-06T05:57:11.273Z",
+  "modified": "2023-01-06T05:57:11.273Z",
+  "objects": [
+    {
+      "type": "extension-definition",
+      "id": "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4",
+      "spec_version": "2.1",
+      "created": "2022-08-02T19:34:35.143Z",
+      "modified": "2022-08-02T19:34:35.143Z",
+      "name": "Attack Flow",
+      "description": "Extends STIX 2.1 with features to create Attack Flows.",
+      "created_by_ref": "identity--fb9c968a-745b-4ade-9b25-c324172197f4",
+      "schema": "https://center-for-threat-informed-defense.github.io/attack-flow/stix/attack-flow-schema-2.0.0.json",
+      "version": "2.0.0",
+      "extension_types": [
+        "new-sdo"
+      ],
+      "external_references": [
+        {
+          "source_name": "Documentation",
+          "description": "Documentation for Attack Flow",
+          "url": "https://center-for-threat-informed-defense.github.io/attack-flow"
+        },
+        {
+          "source_name": "GitHub",
+          "description": "Source code repository for Attack Flow",
+          "url": "https://github.com/center-for-threat-informed-defense/attack-flow"
+        }
+      ]
+    },
+    {
+      "type": "identity",
+      "id": "identity--fb9c968a-745b-4ade-9b25-c324172197f4",
+      "spec_version": "2.1",
+      "created": "2022-08-02T19:34:35.143Z",
+      "modified": "2022-08-02T19:34:35.143Z",
+      "create_by_ref": "identity--fb9c968a-745b-4ade-9b25-c324172197f4",
+      "name": "MITRE Engenuity Center for Threat-Informed Defense",
+      "identity_class": "organization"
+    },
+    {
+      "type": "attack-flow",
+      "id": "attack-flow--144e3f03-da75-4dc5-9d8e-a0978c7bb648",
+      "spec_version": "2.1",
+      "created": "2023-01-06T03:15:32.190Z",
+      "modified": "2023-01-06T05:57:11.273Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "created_by_ref": "identity--9a427afa-3ef8-40d7-a0e6-c5d5250fb4ac",
+      "start_refs": [
+        "attack-action--387e3b1f-c611-4aa0-ba2e-9cf86c3fdb9c"
+      ],
+      "name": "Sunseed",
+      "scope": "incident",
+      "external_references": []
+    },
+    {
+      "type": "identity",
+      "id": "identity--9a427afa-3ef8-40d7-a0e6-c5d5250fb4ac",
+      "spec_version": "2.1",
+      "created": "2023-01-06T05:57:11.273Z",
+      "modified": "2023-01-06T05:57:11.273Z"
+    },
+    {
+      "type": "attack-action",
+      "id": "attack-action--387e3b1f-c611-4aa0-ba2e-9cf86c3fdb9c",
+      "spec_version": "2.1",
+      "created": "2023-01-06T05:57:11.273Z",
+      "modified": "2023-01-06T05:57:11.273Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "Communication Through Removable Media- Malicious link to steal ",
+      "technique_id": "T1092",
+      "technique_ref": "https://attack.mitre.org/techniques/T1092/",
+      "description": "Mass phishing emails have recently been observed targeting private ‘i.ua’ and ‘meta.ua’ accounts of Ukrainian military personnel and related individuals. After the account is compromised, the attackers, by the IMAP protocol, get access to all the messages. Later, the attackers use contact details from the victim’s address book to send the phishing emails.",
+      "effect_refs": [
+        "attack-action--9b1f7480-ed33-455e-8c4f-ab6af91c73d9"
+      ]
+    },
+    {
+      "type": "attack-action",
+      "id": "attack-action--9b1f7480-ed33-455e-8c4f-ab6af91c73d9",
+      "spec_version": "2.1",
+      "created": "2023-01-06T05:57:11.273Z",
+      "modified": "2023-01-06T05:57:11.273Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "Internal Spearphishing- Email delivers XLS macro laden attachment",
+      "technique_id": "T1534",
+      "technique_ref": "https://attack.mitre.org/techniques/T1534/",
+      "description": "Emails containing malicious xls files are sent from the compromised accounts to other Ukraine armed services accounts",
+      "effect_refs": [
+        "attack-action--55aa1598-d232-4f25-9974-1a98e97b0f9c"
+      ]
+    },
+    {
+      "type": "attack-action",
+      "id": "attack-action--55aa1598-d232-4f25-9974-1a98e97b0f9c",
+      "spec_version": "2.1",
+      "created": "2023-01-06T05:57:11.273Z",
+      "modified": "2023-01-06T05:57:11.273Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "Command and Scripting Interpreter- executes a VB macro named “Module1” which creates a Windows Installer.",
+      "technique_id": "T1059",
+      "technique_ref": "https://attack.mitre.org/techniques/T1059/",
+      "description": "Windows Installer (msiexec.exe) object invoking Windows Installer to call out to an actor-controlled staging IP and download a malicious MSI package. It also sets a Microsoft document UILevel equal to “2” which specifies a user interface level of “completely silent installation.” ",
+      "asset_refs": [
+        "attack-asset--a62edbc1-5a8b-4a7c-974a-abe735fb2338"
+      ],
+      "effect_refs": [
+        "attack-action--e45851a1-7d7a-4660-a12f-5c0d87fc3206"
+      ]
+    },
+    {
+      "type": "attack-asset",
+      "id": "attack-asset--a62edbc1-5a8b-4a7c-974a-abe735fb2338",
+      "spec_version": "2.1",
+      "created": "2023-01-06T05:57:11.273Z",
+      "modified": "2023-01-06T05:57:11.273Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "VBA"
+    },
+    {
+      "type": "attack-action",
+      "id": "attack-action--e45851a1-7d7a-4660-a12f-5c0d87fc3206",
+      "spec_version": "2.1",
+      "created": "2023-01-06T05:57:11.273Z",
+      "modified": "2023-01-06T05:57:11.273Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "Create or Modify System Process- MSI payload installs Sunseed on target system",
+      "technique_id": "T1543",
+      "technique_ref": "https://attack.mitre.org/techniques/T1543/",
+      "description": "Lua is installed on host, and LNK persistence is established.",
+      "asset_refs": [
+        "attack-asset--008937ea-7180-449a-bde7-8456658674a1"
+      ],
+      "effect_refs": [
+        "attack-action--fae7d81e-9823-4627-b043-59ce29eee808"
+      ]
+    },
+    {
+      "type": "attack-asset",
+      "id": "attack-asset--008937ea-7180-449a-bde7-8456658674a1",
+      "spec_version": "2.1",
+      "created": "2023-01-06T05:57:11.273Z",
+      "modified": "2023-01-06T05:57:11.273Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "lua-language"
+    },
+    {
+      "type": "attack-action",
+      "id": "attack-action--fae7d81e-9823-4627-b043-59ce29eee808",
+      "spec_version": "2.1",
+      "created": "2023-01-06T05:57:11.273Z",
+      "modified": "2023-01-06T05:57:11.273Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "System Shutdown/Reboot- Windows LNK shortcut is executed on Windows reboot, executes Lua script",
+      "technique_id": "T1529",
+      "technique_ref": "https://attack.mitre.org/techniques/T1529/",
+      "description": "Executes malicious Lua script on target system",
+      "asset_refs": [
+        "attack-asset--26abc2c4-3c71-4bff-ab75-6321d6c1c027"
+      ],
+      "effect_refs": [
+        "attack-action--816fc9b8-8b7d-453a-918a-0bc68edad1c1"
+      ]
+    },
+    {
+      "type": "attack-asset",
+      "id": "attack-asset--26abc2c4-3c71-4bff-ab75-6321d6c1c027",
+      "spec_version": "2.1",
+      "created": "2023-01-06T05:57:11.273Z",
+      "modified": "2023-01-06T05:57:11.273Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "lua-language"
+    },
+    {
+      "type": "attack-action",
+      "id": "attack-action--816fc9b8-8b7d-453a-918a-0bc68edad1c1",
+      "spec_version": "2.1",
+      "created": "2023-01-06T05:57:11.273Z",
+      "modified": "2023-01-06T05:57:11.273Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "Web Service- Communicates stolen info with actor C2 server",
+      "technique_id": "T1102",
+      "technique_ref": "https://attack.mitre.org/techniques/T1102/",
+      "description": "issues GET requests over HTTP via port 80 using a Lua Socket. The requests are issued to the C2 server every three seconds anticipating a response. The malware specifies the user agent as “LuaSocket 2.0.2” and appends the infected target’s C Drive partition serial number to the URI request. Allows operators to be selective about which infections are issued a next stage payload response.",
+      "asset_refs": [
+        "attack-asset--85417183-57cd-462e-994c-666531cae4e8"
+      ]
+    },
+    {
+      "type": "attack-asset",
+      "id": "attack-asset--85417183-57cd-462e-994c-666531cae4e8",
+      "spec_version": "2.1",
+      "created": "2023-01-06T05:57:11.273Z",
+      "modified": "2023-01-06T05:57:11.273Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "C drive Partitial serial number and other system information"
+    }
+  ]
+}

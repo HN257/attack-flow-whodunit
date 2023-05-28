@@ -1,0 +1,189 @@
+{
+  "type": "bundle",
+  "id": "bundle--f3f6a8dd-b4e6-4cb5-a767-29a1d018e448",
+  "spec_version": "2.1",
+  "created": "2023-01-06T04:26:31.437Z",
+  "modified": "2023-01-06T04:26:31.437Z",
+  "objects": [
+    {
+      "type": "extension-definition",
+      "id": "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4",
+      "spec_version": "2.1",
+      "created": "2022-08-02T19:34:35.143Z",
+      "modified": "2022-08-02T19:34:35.143Z",
+      "name": "Attack Flow",
+      "description": "Extends STIX 2.1 with features to create Attack Flows.",
+      "created_by_ref": "identity--fb9c968a-745b-4ade-9b25-c324172197f4",
+      "schema": "https://center-for-threat-informed-defense.github.io/attack-flow/stix/attack-flow-schema-2.0.0.json",
+      "version": "2.0.0",
+      "extension_types": [
+        "new-sdo"
+      ],
+      "external_references": [
+        {
+          "source_name": "Documentation",
+          "description": "Documentation for Attack Flow",
+          "url": "https://center-for-threat-informed-defense.github.io/attack-flow"
+        },
+        {
+          "source_name": "GitHub",
+          "description": "Source code repository for Attack Flow",
+          "url": "https://github.com/center-for-threat-informed-defense/attack-flow"
+        }
+      ]
+    },
+    {
+      "type": "identity",
+      "id": "identity--fb9c968a-745b-4ade-9b25-c324172197f4",
+      "spec_version": "2.1",
+      "created": "2022-08-02T19:34:35.143Z",
+      "modified": "2022-08-02T19:34:35.143Z",
+      "create_by_ref": "identity--fb9c968a-745b-4ade-9b25-c324172197f4",
+      "name": "MITRE Engenuity Center for Threat-Informed Defense",
+      "identity_class": "organization"
+    },
+    {
+      "type": "attack-flow",
+      "id": "attack-flow--fbf1c605-d096-428a-9a1a-8141341bc00c",
+      "spec_version": "2.1",
+      "created": "2023-01-06T03:15:32.190Z",
+      "modified": "2023-01-06T04:26:31.438Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "created_by_ref": "identity--c179ce82-d1fe-4a4b-a613-94c9c4bb5315",
+      "start_refs": [
+        "attack-action--c43354ac-187b-4c55-82a2-c6243abe93b5"
+      ],
+      "name": "AgentTeslaUkraine",
+      "scope": "incident",
+      "external_references": []
+    },
+    {
+      "type": "identity",
+      "id": "identity--c179ce82-d1fe-4a4b-a613-94c9c4bb5315",
+      "spec_version": "2.1",
+      "created": "2023-01-06T04:26:31.437Z",
+      "modified": "2023-01-06T04:26:31.437Z"
+    },
+    {
+      "type": "attack-action",
+      "id": "attack-action--c43354ac-187b-4c55-82a2-c6243abe93b5",
+      "spec_version": "2.1",
+      "created": "2023-01-06T04:26:31.438Z",
+      "modified": "2023-01-06T04:26:31.438Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "Phishing",
+      "technique_id": "T1566",
+      "technique_ref": "https://attack.mitre.org/techniques/T1566/",
+      "description": " the threat actor(s) crafted messages using the email address supawadee.so@univance[.]co[.]th to impersonate UNIVANCE (Thailand) Co., Ltd: a manufacturer of automobile parts. The subject line is REQ : Supplier Survey : Effect of supply chain from the Ukraine/Russa conflict, and the body section is empty. The ZIP file attachment is named REQ Supplier Survey.zip and contains an embedded Microsoft Windows executable.  malspam campaign that was using messages related to Russia’s invasion of Ukraine. The malspam campaign was trying to lure users into downloading a ZIP file attachment whose contents could download the Agent Tesla keylogger. This campaign occurred a week after Russia invaded Ukraine. ",
+      "effect_refs": [
+        "attack-action--61b6fddb-1b19-45e2-a048-7b8ef408a386"
+      ]
+    },
+    {
+      "type": "attack-action",
+      "id": "attack-action--61b6fddb-1b19-45e2-a048-7b8ef408a386",
+      "spec_version": "2.1",
+      "created": "2023-01-06T04:26:31.438Z",
+      "modified": "2023-01-06T04:26:31.438Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "Boot or Logon Autostart Execution",
+      "technique_id": "T1547",
+      "technique_ref": "https://attack.mitre.org/techniques/T1547/",
+      "description": "enables Gzgrfb.exe to run every time the user signs in to the machine.",
+      "effect_refs": [
+        "attack-action--eeab7a65-ce00-433e-9370-7dddef5515a7"
+      ]
+    },
+    {
+      "type": "attack-action",
+      "id": "attack-action--eeab7a65-ce00-433e-9370-7dddef5515a7",
+      "spec_version": "2.1",
+      "created": "2023-01-06T04:26:31.438Z",
+      "modified": "2023-01-06T04:26:31.438Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "Process Injection- Process Hollowing",
+      "technique_id": "T1055.012",
+      "technique_ref": "https://attack.mitre.org/techniques/T1055/012/",
+      "description": "injects the malicious code into the legitimate Windows process MSBuild.exe.",
+      "effect_refs": [
+        "attack-action--4e631477-5e10-463e-8707-e849ff9b6efe"
+      ]
+    },
+    {
+      "type": "attack-action",
+      "id": "attack-action--4e631477-5e10-463e-8707-e849ff9b6efe",
+      "spec_version": "2.1",
+      "created": "2023-01-06T04:26:31.438Z",
+      "modified": "2023-01-06T04:26:31.438Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "Exfiltration Over Web Service",
+      "technique_id": "T1567",
+      "technique_ref": "https://attack.mitre.org/techniques/T1567/",
+      "description": "sends the stolen data to the actor’s email account officestore2022@gmail[.]com via SMTP, by using the compromised email account julieta@escueladeseguridadmaritima[.]com and the email server mail[.]escueladeseguridadmaritima[.]com.",
+      "asset_refs": [
+        "attack-asset--e4b29a8c-9de0-4908-b041-86fa5d017448",
+        "attack-asset--1b3104ad-2e1f-46c8-8d10-d3b13bae717b",
+        "attack-asset--c9304872-66ef-42ec-b3f6-2ca60150e367"
+      ]
+    },
+    {
+      "type": "attack-asset",
+      "id": "attack-asset--e4b29a8c-9de0-4908-b041-86fa5d017448",
+      "spec_version": "2.1",
+      "created": "2023-01-06T04:26:31.438Z",
+      "modified": "2023-01-06T04:26:31.438Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "communication between compromised email and actor's email"
+    },
+    {
+      "type": "attack-asset",
+      "id": "attack-asset--1b3104ad-2e1f-46c8-8d10-d3b13bae717b",
+      "spec_version": "2.1",
+      "created": "2023-01-06T04:26:31.438Z",
+      "modified": "2023-01-06T04:26:31.438Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "sensitive data"
+    },
+    {
+      "type": "attack-asset",
+      "id": "attack-asset--c9304872-66ef-42ec-b3f6-2ca60150e367",
+      "spec_version": "2.1",
+      "created": "2023-01-06T04:26:31.438Z",
+      "modified": "2023-01-06T04:26:31.438Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "account credentials"
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+# The attacker has scanned our IP address range
+# for machines listening on port 3389 and
+# supporting the RDP protocol.
+T1133
+
+# He then brute-forced for weak passwords and
+# gained access to a local account on one of them.
+T1110.003 T1078.003
+
+# He bypassed the UAC and used a local privilege
+# escalation exploit to gain SYSTEM level access.
+T1548.002 T1068
+
+# This allowed him to turn off the anti-virus protection.
+T1562.001
+
+# He then used a PowerShell script to download
+# and run a copy of Mimikatz and to dump the
+# password hashes from the LSASS memory.
+T1059.001 T1003.001
+
+# This let him gain access to the domain controller
+# of our ActiveDirectory.
+
+# He then archived in a ZIP archive the documents from the
+# local machine, the shared directories on the network, the
+# e-mails, and the documents in the SharePoint repository.
+T1560 T1005 T1039 T1114.001 T1213.002
+
+# The collected data was sent to his C2 server via HTTPS.
+T1573.002
+
+# He then ran a ransomware program that encrypted the
+# data files on all compromised machines.
+T1486

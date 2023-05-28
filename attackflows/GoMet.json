@@ -1,0 +1,145 @@
+{
+  "type": "bundle",
+  "id": "bundle--6abe2cf6-5ebc-4c8f-8f18-fc6a5cc723dd",
+  "spec_version": "2.1",
+  "created": "2023-01-06T04:53:45.925Z",
+  "modified": "2023-01-06T04:53:45.925Z",
+  "objects": [
+    {
+      "type": "extension-definition",
+      "id": "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4",
+      "spec_version": "2.1",
+      "created": "2022-08-02T19:34:35.143Z",
+      "modified": "2022-08-02T19:34:35.143Z",
+      "name": "Attack Flow",
+      "description": "Extends STIX 2.1 with features to create Attack Flows.",
+      "created_by_ref": "identity--fb9c968a-745b-4ade-9b25-c324172197f4",
+      "schema": "https://center-for-threat-informed-defense.github.io/attack-flow/stix/attack-flow-schema-2.0.0.json",
+      "version": "2.0.0",
+      "extension_types": [
+        "new-sdo"
+      ],
+      "external_references": [
+        {
+          "source_name": "Documentation",
+          "description": "Documentation for Attack Flow",
+          "url": "https://center-for-threat-informed-defense.github.io/attack-flow"
+        },
+        {
+          "source_name": "GitHub",
+          "description": "Source code repository for Attack Flow",
+          "url": "https://github.com/center-for-threat-informed-defense/attack-flow"
+        }
+      ]
+    },
+    {
+      "type": "identity",
+      "id": "identity--fb9c968a-745b-4ade-9b25-c324172197f4",
+      "spec_version": "2.1",
+      "created": "2022-08-02T19:34:35.143Z",
+      "modified": "2022-08-02T19:34:35.143Z",
+      "create_by_ref": "identity--fb9c968a-745b-4ade-9b25-c324172197f4",
+      "name": "MITRE Engenuity Center for Threat-Informed Defense",
+      "identity_class": "organization"
+    },
+    {
+      "type": "attack-flow",
+      "id": "attack-flow--a8eb415a-e335-4e64-a6cc-2c27a5ce59f8",
+      "spec_version": "2.1",
+      "created": "2023-01-06T03:15:32.190Z",
+      "modified": "2023-01-06T04:53:45.926Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "created_by_ref": "identity--627beaac-f9f0-4399-911a-5d82ef267c60",
+      "start_refs": [
+        "attack-action--bd235542-586a-4cb2-b19b-3862dd39004a"
+      ],
+      "name": "GoMet",
+      "scope": "incident",
+      "external_references": []
+    },
+    {
+      "type": "identity",
+      "id": "identity--627beaac-f9f0-4399-911a-5d82ef267c60",
+      "spec_version": "2.1",
+      "created": "2023-01-06T04:53:45.925Z",
+      "modified": "2023-01-06T04:53:45.925Z"
+    },
+    {
+      "type": "attack-action",
+      "id": "attack-action--bd235542-586a-4cb2-b19b-3862dd39004a",
+      "spec_version": "2.1",
+      "created": "2023-01-06T04:53:45.926Z",
+      "modified": "2023-01-06T04:53:45.926Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "Impair Defenses- Exploitation of CVE-2022-1040 from a vulnerability in Sophos' firewall F5 BIG-IP",
+      "technique_id": "T1562",
+      "technique_ref": "https://attack.mitre.org/techniques/T1562/",
+      "description": "The bug abuses a standard system process to place a file into a fixed filesystem location on the device.",
+      "effect_refs": [
+        "attack-action--03b9be41-8c86-40db-9a22-07d76fa5bbb7"
+      ]
+    },
+    {
+      "type": "attack-action",
+      "id": "attack-action--03b9be41-8c86-40db-9a22-07d76fa5bbb7",
+      "spec_version": "2.1",
+      "created": "2023-01-06T04:53:45.926Z",
+      "modified": "2023-01-06T04:53:45.926Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "System Shutdown/Reboot- Rebooting target system",
+      "technique_id": "T1529",
+      "technique_ref": "https://attack.mitre.org/techniques/T1529/",
+      "description": "triggered the device into stopping, then restarting, some services.  This step caused the device to execute the files that had been placed there.",
+      "effect_refs": [
+        "attack-action--f0b2d87d-e762-43a4-9f7a-74b37f19e1ff"
+      ]
+    },
+    {
+      "type": "attack-action",
+      "id": "attack-action--f0b2d87d-e762-43a4-9f7a-74b37f19e1ff",
+      "spec_version": "2.1",
+      "created": "2023-01-06T04:53:45.926Z",
+      "modified": "2023-01-06T04:53:45.926Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "Create or Modify System Process- Replaces goodware autorun executable values",
+      "technique_id": "T1543",
+      "technique_ref": "https://attack.mitre.org/techniques/T1543/",
+      "description": "Replaces one of the existing goodware autorun executables with the malware (instead of creating new values).",
+      "effect_refs": [
+        "attack-action--5144303f-000f-4fe1-bfa6-45ac7af5c596"
+      ]
+    },
+    {
+      "type": "attack-action",
+      "id": "attack-action--5144303f-000f-4fe1-bfa6-45ac7af5c596",
+      "spec_version": "2.1",
+      "created": "2023-01-06T04:53:45.926Z",
+      "modified": "2023-01-06T04:53:45.926Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "Remote System Discovery- backdoor remote access",
+      "technique_id": "T1018",
+      "technique_ref": "https://attack.mitre.org/techniques/T1018/",
+      "description": "The attackers used backdoor tools to remotely execute commands once they had breached the device. They exfiltrated a wide range of sensitive data from the device itself and used it to profile and document other potential targets on the host."
+    }
+  ]
+}

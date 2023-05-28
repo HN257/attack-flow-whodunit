@@ -1,0 +1,352 @@
+{
+  "type": "bundle",
+  "id": "bundle--641383e3-517e-4160-82d6-18789a27b7af",
+  "spec_version": "2.1",
+  "created": "2023-01-05T13:22:58.348Z",
+  "modified": "2023-01-05T13:22:58.348Z",
+  "objects": [
+    {
+      "type": "extension-definition",
+      "id": "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4",
+      "spec_version": "2.1",
+      "created": "2022-08-02T19:34:35.143Z",
+      "modified": "2022-08-02T19:34:35.143Z",
+      "name": "Attack Flow",
+      "description": "Extends STIX 2.1 with features to create Attack Flows.",
+      "created_by_ref": "identity--fb9c968a-745b-4ade-9b25-c324172197f4",
+      "schema": "https://center-for-threat-informed-defense.github.io/attack-flow/stix/attack-flow-schema-2.0.0.json",
+      "version": "2.0.0",
+      "extension_types": [
+        "new-sdo"
+      ],
+      "external_references": [
+        {
+          "source_name": "Documentation",
+          "description": "Documentation for Attack Flow",
+          "url": "https://center-for-threat-informed-defense.github.io/attack-flow"
+        },
+        {
+          "source_name": "GitHub",
+          "description": "Source code repository for Attack Flow",
+          "url": "https://github.com/center-for-threat-informed-defense/attack-flow"
+        }
+      ]
+    },
+    {
+      "type": "identity",
+      "id": "identity--fb9c968a-745b-4ade-9b25-c324172197f4",
+      "spec_version": "2.1",
+      "created": "2022-08-02T19:34:35.143Z",
+      "modified": "2022-08-02T19:34:35.143Z",
+      "create_by_ref": "identity--fb9c968a-745b-4ade-9b25-c324172197f4",
+      "name": "MITRE Engenuity Center for Threat-Informed Defense",
+      "identity_class": "organization"
+    },
+    {
+      "type": "attack-flow",
+      "id": "attack-flow--aef7eba5-4bcd-4cea-87ad-86de8813215b",
+      "spec_version": "2.1",
+      "created": "2023-01-05T12:17:11.342Z",
+      "modified": "2023-01-05T13:22:58.348Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "created_by_ref": "identity--99bf04cf-3d14-40b4-8160-062a4bc8b930",
+      "start_refs": [
+        "attack-condition--db5c3323-a5a6-4ef2-9fd9-422dfed4e4a7"
+      ],
+      "name": "svr-cyber-actors",
+      "scope": "incident",
+      "external_references": []
+    },
+    {
+      "type": "identity",
+      "id": "identity--99bf04cf-3d14-40b4-8160-062a4bc8b930",
+      "spec_version": "2.1",
+      "created": "2023-01-05T13:22:58.348Z",
+      "modified": "2023-01-05T13:22:58.348Z"
+    },
+    {
+      "type": "attack-condition",
+      "id": "attack-condition--db5c3323-a5a6-4ef2-9fd9-422dfed4e4a7",
+      "spec_version": "2.1",
+      "created": "2023-01-05T13:22:58.348Z",
+      "modified": "2023-01-05T13:22:58.348Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "description": "vulnerable systems is publicly available",
+      "on_true_refs": [
+        "attack-action--b404868e-8d35-481b-9594-3cbe962ebc84",
+        "attack-action--d94d6451-b350-4f34-9e99-b74c183428ef"
+      ]
+    },
+    {
+      "type": "attack-action",
+      "id": "attack-action--b404868e-8d35-481b-9594-3cbe962ebc84",
+      "spec_version": "2.1",
+      "created": "2023-01-05T13:22:58.348Z",
+      "modified": "2023-01-05T13:22:58.348Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "Active Scanning: Vulnerability Scanning",
+      "technique_id": "T1595.002",
+      "technique_ref": "https://attack.mitre.org/techniques/T1595/002/",
+      "description": "Conduct widespread scanning for vulnerabilities that can be used during targeting",
+      "effect_refs": [
+        "attack-operator--79cffc5f-d104-4780-8ba6-9c94462110ed"
+      ]
+    },
+    {
+      "type": "attack-action",
+      "id": "attack-action--d94d6451-b350-4f34-9e99-b74c183428ef",
+      "spec_version": "2.1",
+      "created": "2023-01-05T13:22:58.348Z",
+      "modified": "2023-01-05T13:22:58.348Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "Exploit Public-Facing Application",
+      "technique_id": "T1190",
+      "technique_ref": "https://attack.mitre.org/techniques/T1190/",
+      "description": "Conduct widespread exploitation of vulnerable systems",
+      "effect_refs": [
+        "attack-operator--79cffc5f-d104-4780-8ba6-9c94462110ed"
+      ]
+    },
+    {
+      "type": "attack-operator",
+      "id": "attack-operator--79cffc5f-d104-4780-8ba6-9c94462110ed",
+      "spec_version": "2.1",
+      "created": "2023-01-05T13:22:58.348Z",
+      "modified": "2023-01-05T13:22:58.348Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "operator": "AND",
+      "effect_refs": [
+        "attack-action--e7d8b551-7f6d-49b2-8c45-1ed887bf9894"
+      ]
+    },
+    {
+      "type": "attack-action",
+      "id": "attack-action--e7d8b551-7f6d-49b2-8c45-1ed887bf9894",
+      "spec_version": "2.1",
+      "created": "2023-01-05T13:22:58.348Z",
+      "modified": "2023-01-05T13:22:58.348Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "Supply Chain Compromise: Compromise Software Supply Chain",
+      "technique_id": "T1195.002",
+      "technique_ref": "https://attack.mitre.org/techniques/T1195/002/",
+      "description": "Target organisations who supply privileged software to intelligence targets",
+      "effect_refs": [
+        "attack-action--7d137b3f-ea0c-49b3-b19a-ce4abd7e8b5d",
+        "attack-action--90913957-a143-439e-bb08-1eb1fafd95f4"
+      ]
+    },
+    {
+      "type": "attack-action",
+      "id": "attack-action--7d137b3f-ea0c-49b3-b19a-ce4abd7e8b5d",
+      "spec_version": "2.1",
+      "created": "2023-01-05T13:22:58.348Z",
+      "modified": "2023-01-05T13:22:58.348Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "Command and Scripting Interpreter: Visual Basic",
+      "technique_id": "T1059.005",
+      "technique_ref": "https://attack.mitre.org/techniques/T1059/005/",
+      "description": "Deploy Sibot, a simple custom downloader written in VBS, after compromising victims via SolarWinds",
+      "effect_refs": [
+        "attack-action--6809b48b-fa21-46ca-95fb-f694f291091c"
+      ]
+    },
+    {
+      "type": "attack-action",
+      "id": "attack-action--90913957-a143-439e-bb08-1eb1fafd95f4",
+      "spec_version": "2.1",
+      "created": "2023-01-05T13:22:58.348Z",
+      "modified": "2023-01-05T13:22:58.348Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "Unsecured Credentials: Private Keys ",
+      "technique_id": "T1552.004",
+      "technique_ref": "https://attack.mitre.org/techniques/T1552/004/",
+      "description": "Leverage access gained from the SolarWinds campaign to compromise a certificate issued by Mimecast",
+      "effect_refs": [
+        "attack-action--586598c8-1766-46b0-aa48-9ac6c6222b40"
+      ]
+    },
+    {
+      "type": "attack-action",
+      "id": "attack-action--6809b48b-fa21-46ca-95fb-f694f291091c",
+      "spec_version": "2.1",
+      "created": "2023-01-05T13:22:58.348Z",
+      "modified": "2023-01-05T13:22:58.348Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "Server Software Component: Web Shell",
+      "technique_id": "T1505.003",
+      "technique_ref": "https://attack.mitre.org/techniques/T1505/003/",
+      "description": "Deploy a web shell on Microsoft Exchange servers following successful compromise",
+      "effect_refs": [
+        "attack-action--21278b8e-8fb6-48ab-b940-f7b3a18fc65b"
+      ]
+    },
+    {
+      "type": "attack-action",
+      "id": "attack-action--586598c8-1766-46b0-aa48-9ac6c6222b40",
+      "spec_version": "2.1",
+      "created": "2023-01-05T13:22:58.348Z",
+      "modified": "2023-01-05T13:22:58.348Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "Trusted Relationship",
+      "technique_id": "T1199",
+      "technique_ref": "https://attack.mitre.org/techniques/T1199/",
+      "description": "Use the leveraged access to authenticate a subset of Mimecast's products with customer systems; able to abuse the Mimecast Azure app",
+      "effect_refs": [
+        "attack-action--faf36f42-d45c-49b2-95d5-cd95c70fb2b6"
+      ]
+    },
+    {
+      "type": "attack-action",
+      "id": "attack-action--21278b8e-8fb6-48ab-b940-f7b3a18fc65b",
+      "spec_version": "2.1",
+      "created": "2023-01-05T13:22:58.348Z",
+      "modified": "2023-01-05T13:22:58.348Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "Unsecured Credentials",
+      "technique_id": "T1552",
+      "technique_ref": "https://attack.mitre.org/techniques/T1078/",
+      "description": "Search for insecurely stored authentication credentials in mailboxes",
+      "asset_refs": [
+        "attack-asset--f55efea5-115c-4c83-8dab-8c52458a27a3",
+        "attack-asset--d44b38f9-4933-4700-ac10-6b705b6f0e97"
+      ],
+      "effect_refs": [
+        "attack-action--3c41cf17-0489-4082-b1fd-4aacbe5fa136"
+      ]
+    },
+    {
+      "type": "attack-action",
+      "id": "attack-action--faf36f42-d45c-49b2-95d5-cd95c70fb2b6",
+      "spec_version": "2.1",
+      "created": "2023-01-05T13:22:58.348Z",
+      "modified": "2023-01-05T13:22:58.348Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "Email Collection: Remote Email Collection ",
+      "technique_id": "T1114.002",
+      "technique_ref": "https://attack.mitre.org/techniques/T1114/002/",
+      "description": "Gained full access to all mailboxes in the victim organisation's tenant, utilise the applications permissions to extract emails",
+      "asset_refs": [
+        "attack-asset--523122d7-cdbe-4bb5-9512-43bbbb1e6629"
+      ]
+    },
+    {
+      "type": "attack-asset",
+      "id": "attack-asset--523122d7-cdbe-4bb5-9512-43bbbb1e6629",
+      "spec_version": "2.1",
+      "created": "2023-01-05T13:22:58.348Z",
+      "modified": "2023-01-05T13:22:58.348Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "email access"
+    },
+    {
+      "type": "attack-asset",
+      "id": "attack-asset--f55efea5-115c-4c83-8dab-8c52458a27a3",
+      "spec_version": "2.1",
+      "created": "2023-01-05T13:22:58.348Z",
+      "modified": "2023-01-05T13:22:58.348Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "passwords"
+    },
+    {
+      "type": "attack-asset",
+      "id": "attack-asset--d44b38f9-4933-4700-ac10-6b705b6f0e97",
+      "spec_version": "2.1",
+      "created": "2023-01-05T13:22:58.348Z",
+      "modified": "2023-01-05T13:22:58.348Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "PKI keys"
+    },
+    {
+      "type": "attack-action",
+      "id": "attack-action--3c41cf17-0489-4082-b1fd-4aacbe5fa136",
+      "spec_version": "2.1",
+      "created": "2023-01-05T13:22:58.348Z",
+      "modified": "2023-01-05T13:22:58.348Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "Valid Accounts",
+      "technique_id": "T1078",
+      "technique_ref": "https://attack.mitre.org/techniques/T1078/",
+      "description": "Maintain persistence on high value targets using stolen credentials",
+      "asset_refs": [
+        "attack-asset--dd35034a-9ffa-45c7-8986-8bc2f05fda4e"
+      ]
+    },
+    {
+      "type": "attack-asset",
+      "id": "attack-asset--dd35034a-9ffa-45c7-8986-8bc2f05fda4e",
+      "spec_version": "2.1",
+      "created": "2023-01-05T13:22:58.348Z",
+      "modified": "2023-01-05T13:22:58.348Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "no further escalation or lateral movement"
+    }
+  ]
+}

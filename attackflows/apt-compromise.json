@@ -1,0 +1,737 @@
+{
+  "type": "bundle",
+  "id": "bundle--f8a37839-0dab-4094-a7eb-cf7c38b37ffe",
+  "spec_version": "2.1",
+  "created": "2023-01-05T12:22:09.075Z",
+  "modified": "2023-01-05T12:22:09.075Z",
+  "objects": [
+    {
+      "type": "extension-definition",
+      "id": "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4",
+      "spec_version": "2.1",
+      "created": "2022-08-02T19:34:35.143Z",
+      "modified": "2022-08-02T19:34:35.143Z",
+      "name": "Attack Flow",
+      "description": "Extends STIX 2.1 with features to create Attack Flows.",
+      "created_by_ref": "identity--fb9c968a-745b-4ade-9b25-c324172197f4",
+      "schema": "https://center-for-threat-informed-defense.github.io/attack-flow/stix/attack-flow-schema-2.0.0.json",
+      "version": "2.0.0",
+      "extension_types": [
+        "new-sdo"
+      ],
+      "external_references": [
+        {
+          "source_name": "Documentation",
+          "description": "Documentation for Attack Flow",
+          "url": "https://center-for-threat-informed-defense.github.io/attack-flow"
+        },
+        {
+          "source_name": "GitHub",
+          "description": "Source code repository for Attack Flow",
+          "url": "https://github.com/center-for-threat-informed-defense/attack-flow"
+        }
+      ]
+    },
+    {
+      "type": "identity",
+      "id": "identity--fb9c968a-745b-4ade-9b25-c324172197f4",
+      "spec_version": "2.1",
+      "created": "2022-08-02T19:34:35.143Z",
+      "modified": "2022-08-02T19:34:35.143Z",
+      "create_by_ref": "identity--fb9c968a-745b-4ade-9b25-c324172197f4",
+      "name": "MITRE Engenuity Center for Threat-Informed Defense",
+      "identity_class": "organization"
+    },
+    {
+      "type": "attack-flow",
+      "id": "attack-flow--70f47fda-d190-4bae-8357-50f90bad79d9",
+      "spec_version": "2.1",
+      "created": "2023-01-01T01:51:38.878Z",
+      "modified": "2023-01-05T12:22:09.075Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "created_by_ref": "identity--e8a26234-3232-41a3-9214-8e63dad7fabd",
+      "start_refs": [
+        "attack-condition--3301e838-ef11-42ea-a3ab-df7a08adf5b1"
+      ],
+      "name": "apt-compromise",
+      "scope": "incident",
+      "external_references": []
+    },
+    {
+      "type": "identity",
+      "id": "identity--e8a26234-3232-41a3-9214-8e63dad7fabd",
+      "spec_version": "2.1",
+      "created": "2023-01-05T12:22:09.075Z",
+      "modified": "2023-01-05T12:22:09.075Z"
+    },
+    {
+      "type": "attack-condition",
+      "id": "attack-condition--3301e838-ef11-42ea-a3ab-df7a08adf5b1",
+      "spec_version": "2.1",
+      "created": "2023-01-05T12:22:09.075Z",
+      "modified": "2023-01-05T12:22:09.075Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "description": "critical infrastructure entities, US government agencies, private sector organisations on Windows networks",
+      "on_true_refs": [
+        "attack-action--ac8fc22a-0805-4abf-b742-aad9357b25ff"
+      ]
+    },
+    {
+      "type": "attack-action",
+      "id": "attack-action--ac8fc22a-0805-4abf-b742-aad9357b25ff",
+      "spec_version": "2.1",
+      "created": "2023-01-05T12:22:09.075Z",
+      "modified": "2023-01-05T12:22:09.075Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "Query Registry",
+      "technique_id": "T1012",
+      "technique_ref": "https://attack.mitre.org/techniques/T1133/",
+      "description": "Interacts with the Windows Registry to gather information",
+      "asset_refs": [
+        "attack-asset--354eaa4d-7e64-4ca7-bd98-ecfd128b2d82",
+        "attack-asset--8c9d20c2-8d81-4b37-9d54-5b60b9bd7de6",
+        "attack-asset--dd969216-349e-4ec1-a539-33814a59ff14"
+      ],
+      "effect_refs": [
+        "attack-action--a656d7e8-74af-4248-b726-ab8a178a4132",
+        "attack-action--681dbbc9-4bbf-4065-a178-d56c0b957517"
+      ]
+    },
+    {
+      "type": "attack-asset",
+      "id": "attack-asset--354eaa4d-7e64-4ca7-bd98-ecfd128b2d82",
+      "spec_version": "2.1",
+      "created": "2023-01-05T12:22:09.075Z",
+      "modified": "2023-01-05T12:22:09.075Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "system information"
+    },
+    {
+      "type": "attack-asset",
+      "id": "attack-asset--8c9d20c2-8d81-4b37-9d54-5b60b9bd7de6",
+      "spec_version": "2.1",
+      "created": "2023-01-05T12:22:09.075Z",
+      "modified": "2023-01-05T12:22:09.075Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "configuration"
+    },
+    {
+      "type": "attack-asset",
+      "id": "attack-asset--dd969216-349e-4ec1-a539-33814a59ff14",
+      "spec_version": "2.1",
+      "created": "2023-01-05T12:22:09.075Z",
+      "modified": "2023-01-05T12:22:09.075Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "installed software"
+    },
+    {
+      "type": "attack-action",
+      "id": "attack-action--a656d7e8-74af-4248-b726-ab8a178a4132",
+      "spec_version": "2.1",
+      "created": "2023-01-05T12:22:09.075Z",
+      "modified": "2023-01-05T12:22:09.075Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "Brute Force: Password Guessing",
+      "technique_id": "T1110.001",
+      "technique_ref": "https://attack.mitre.org/techniques/T1110/001/",
+      "description": "Use a single or small list of commonly used passwords against many different accounts to attempt to acquire valid account credentials",
+      "effect_refs": [
+        "attack-operator--cc70281a-527a-4ea2-8da5-621cdd18fa3e"
+      ]
+    },
+    {
+      "type": "attack-action",
+      "id": "attack-action--681dbbc9-4bbf-4065-a178-d56c0b957517",
+      "spec_version": "2.1",
+      "created": "2023-01-05T12:22:09.075Z",
+      "modified": "2023-01-05T12:22:09.075Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "Brute Force: Password Spraying",
+      "technique_id": "T1110.003",
+      "technique_ref": "https://attack.mitre.org/techniques/T1110/003/",
+      "description": "Use a single or small list of commonly used passwords against many different accounts to attempt to acquire valid account credentials",
+      "effect_refs": [
+        "attack-operator--cc70281a-527a-4ea2-8da5-621cdd18fa3e"
+      ]
+    },
+    {
+      "type": "attack-condition",
+      "id": "attack-condition--204ec461-8d3f-4c0c-b06e-d2175f5b8503",
+      "spec_version": "2.1",
+      "created": "2023-01-05T12:22:09.075Z",
+      "modified": "2023-01-05T12:22:09.075Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "description": "remote services (external-facing)",
+      "on_true_refs": [
+        "attack-action--2d52fb03-a34d-4224-950c-d8650fadb367"
+      ]
+    },
+    {
+      "type": "attack-action",
+      "id": "attack-action--2d52fb03-a34d-4224-950c-d8650fadb367",
+      "spec_version": "2.1",
+      "created": "2023-01-05T12:22:09.075Z",
+      "modified": "2023-01-05T12:22:09.075Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "External Remote Services",
+      "technique_id": "T1133",
+      "technique_ref": "https://attack.mitre.org/techniques/T1133/",
+      "description": "Leverage external-facing remote services to initially access the network",
+      "asset_refs": [
+        "attack-asset--07a20f36-a84d-4c09-8ba5-e80078aaf7b5"
+      ],
+      "effect_refs": [
+        "attack-action--dbd0ee47-596d-472d-8efb-d17b3d80ece4"
+      ]
+    },
+    {
+      "type": "attack-asset",
+      "id": "attack-asset--07a20f36-a84d-4c09-8ba5-e80078aaf7b5",
+      "spec_version": "2.1",
+      "created": "2023-01-05T12:22:09.075Z",
+      "modified": "2023-01-05T12:22:09.075Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "access gained"
+    },
+    {
+      "type": "attack-action",
+      "id": "attack-action--dbd0ee47-596d-472d-8efb-d17b3d80ece4",
+      "spec_version": "2.1",
+      "created": "2023-01-05T12:22:09.075Z",
+      "modified": "2023-01-05T12:22:09.075Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "Valid Accounts",
+      "technique_id": "T1078",
+      "technique_ref": "https://attack.mitre.org/techniques/T1133/",
+      "description": "Identify inappropriately secured administrative credentials and abuse them to bypass access controls",
+      "effect_refs": [
+        "attack-operator--cc70281a-527a-4ea2-8da5-621cdd18fa3e"
+      ]
+    },
+    {
+      "type": "attack-operator",
+      "id": "attack-operator--cc70281a-527a-4ea2-8da5-621cdd18fa3e",
+      "spec_version": "2.1",
+      "created": "2023-01-05T12:22:09.075Z",
+      "modified": "2023-01-05T12:22:09.075Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "operator": "AND",
+      "effect_refs": [
+        "attack-action--8a3d4083-52a8-4ab7-ba3b-408067a9de44"
+      ]
+    },
+    {
+      "type": "attack-action",
+      "id": "attack-action--8a3d4083-52a8-4ab7-ba3b-408067a9de44",
+      "spec_version": "2.1",
+      "created": "2023-01-05T12:22:09.075Z",
+      "modified": "2023-01-05T12:22:09.075Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "System Services: Service Execution",
+      "technique_id": "T1569.002",
+      "technique_ref": "https://attack.mitre.org/techniques/T1569/002/",
+      "description": "Abuse the Windows service control manager to execute malicious commands or payloads",
+      "effect_refs": [
+        "attack-action--2f5f2cad-9490-4106-85f7-08091389a0e6"
+      ]
+    },
+    {
+      "type": "attack-asset",
+      "id": "attack-asset--e7985ec2-d142-44ca-a0a2-e4128de53bd3",
+      "spec_version": "2.1",
+      "created": "2023-01-05T12:22:09.075Z",
+      "modified": "2023-01-05T12:22:09.075Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "credentials access"
+    },
+    {
+      "type": "attack-action",
+      "id": "attack-action--2f5f2cad-9490-4106-85f7-08091389a0e6",
+      "spec_version": "2.1",
+      "created": "2023-01-05T12:22:09.075Z",
+      "modified": "2023-01-05T12:22:09.075Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "Create or Modify System Process: Windows Service",
+      "technique_id": "T1543.003",
+      "technique_ref": "https://attack.mitre.org/techniques/T1543.003/",
+      "description": "Add authentication credentials in the form of assigning tokens and certificates to existing Azure/Microsoft 365 application service principals",
+      "asset_refs": [
+        "attack-asset--6a02b22f-8ce0-44ed-a6e4-a729935d6244",
+        "attack-asset--e9957213-51cc-4889-8fa7-63f3e4e23004",
+        "attack-asset--8d2e189c-f30e-451c-b30a-c8ec0ab98a73"
+      ],
+      "effect_refs": [
+        "attack-action--6a7f9f29-b61a-403b-9b72-cfbc71351782"
+      ]
+    },
+    {
+      "type": "attack-asset",
+      "id": "attack-asset--6a02b22f-8ce0-44ed-a6e4-a729935d6244",
+      "spec_version": "2.1",
+      "created": "2023-01-05T12:22:09.075Z",
+      "modified": "2023-01-05T12:22:09.075Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "persistence and escalation mechanisms"
+    },
+    {
+      "type": "attack-asset",
+      "id": "attack-asset--e9957213-51cc-4889-8fa7-63f3e4e23004",
+      "spec_version": "2.1",
+      "created": "2023-01-05T12:22:09.075Z",
+      "modified": "2023-01-05T12:22:09.075Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "Microsoft Cloud tenants interaction"
+    },
+    {
+      "type": "attack-asset",
+      "id": "attack-asset--8d2e189c-f30e-451c-b30a-c8ec0ab98a73",
+      "spec_version": "2.1",
+      "created": "2023-01-05T12:22:09.075Z",
+      "modified": "2023-01-05T12:22:09.075Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "access to hosted resources"
+    },
+    {
+      "type": "attack-action",
+      "id": "attack-action--6a7f9f29-b61a-403b-9b72-cfbc71351782",
+      "spec_version": "2.1",
+      "created": "2023-01-05T12:22:09.075Z",
+      "modified": "2023-01-05T12:22:09.075Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "Subvert Trust Controls: Code Signing",
+      "technique_id": "T1553.002",
+      "technique_ref": "https://attack.mitre.org/techniques/T1553/002/",
+      "description": "Add new federation trusts to existing on-premises infrastructure to authenticate outside of the organisation's known infrastructure",
+      "effect_refs": [
+        "attack-action--5faa3efd-bc5f-49af-b7ed-fdde40c37cc2",
+        "attack-action--d973ed02-25c3-49a4-be15-4e0c0c05dd49",
+        "attack-action--147aa57b-cea6-4a5c-8560-9e7dd0315fdf",
+        "attack-action--b882afb8-ff3a-46c9-8863-f9755a3f827c",
+        "attack-action--6da2af40-80d1-442a-b2ab-2566e4cebaf0"
+      ]
+    },
+    {
+      "type": "attack-action",
+      "id": "attack-action--5faa3efd-bc5f-49af-b7ed-fdde40c37cc2",
+      "spec_version": "2.1",
+      "created": "2023-01-05T12:22:09.075Z",
+      "modified": "2023-01-05T12:22:09.075Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "Process Discovery",
+      "technique_id": "T1057",
+      "technique_ref": "https://attack.mitre.org/techniques/T1027/",
+      "description": "Attempt to get information about running processes on a system. Information obtained could be used to gain an understanding of common software/applications running on systems within the network",
+      "effect_refs": [
+        "attack-operator--a1a3eb14-2bc9-4aba-bc09-f7685fb2f18e"
+      ]
+    },
+    {
+      "type": "attack-action",
+      "id": "attack-action--d973ed02-25c3-49a4-be15-4e0c0c05dd49",
+      "spec_version": "2.1",
+      "created": "2023-01-05T12:22:09.075Z",
+      "modified": "2023-01-05T12:22:09.075Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "File and Directory Discovery",
+      "technique_id": "T1083",
+      "technique_ref": "https://attack.mitre.org/techniques/T1083/",
+      "description": "Enumerate files and directories or may search in specific locations of a host or network share for certain information within a file system",
+      "effect_refs": [
+        "attack-operator--a1a3eb14-2bc9-4aba-bc09-f7685fb2f18e"
+      ]
+    },
+    {
+      "type": "attack-action",
+      "id": "attack-action--147aa57b-cea6-4a5c-8560-9e7dd0315fdf",
+      "spec_version": "2.1",
+      "created": "2023-01-05T12:22:09.075Z",
+      "modified": "2023-01-05T12:22:09.075Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "Software Discovery",
+      "technique_id": "T1518",
+      "technique_ref": "https://attack.mitre.org/techniques/T1518/",
+      "description": "Attempt to get a listing of software and software versions that are installed on a system or in a cloud environment",
+      "effect_refs": [
+        "attack-operator--a1a3eb14-2bc9-4aba-bc09-f7685fb2f18e"
+      ]
+    },
+    {
+      "type": "attack-action",
+      "id": "attack-action--b882afb8-ff3a-46c9-8863-f9755a3f827c",
+      "spec_version": "2.1",
+      "created": "2023-01-05T12:22:09.075Z",
+      "modified": "2023-01-05T12:22:09.075Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "Software Discovery: Security Software",
+      "technique_id": "T1518.001",
+      "technique_ref": "https://attack.mitre.org/techniques/T1518/001/",
+      "description": "Attempt to get a listing of security software, configurations, defensive tools, and sensors that are installed on a system or in a cloud environment. This may include things such as firewall rules and anti-virus.",
+      "effect_refs": [
+        "attack-operator--a1a3eb14-2bc9-4aba-bc09-f7685fb2f18e"
+      ]
+    },
+    {
+      "type": "attack-action",
+      "id": "attack-action--6da2af40-80d1-442a-b2ab-2566e4cebaf0",
+      "spec_version": "2.1",
+      "created": "2023-01-05T12:22:09.075Z",
+      "modified": "2023-01-05T12:22:09.075Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "Application Layer Protocol: DNS",
+      "technique_id": "T1071.004",
+      "technique_ref": "https://attack.mitre.org/techniques/T1071/004/",
+      "description": "Communicate using the DNS application layer protocol to avoid detection/network filtering by blending in with existing traffic",
+      "effect_refs": [
+        "attack-action--8c5af807-34e0-4eb8-9a14-1addbbaa1ae1"
+      ]
+    },
+    {
+      "type": "attack-action",
+      "id": "attack-action--7d0fc1f4-ac42-4cfe-9d1a-0ec486d26c91",
+      "spec_version": "2.1",
+      "created": "2023-01-05T12:22:09.075Z",
+      "modified": "2023-01-05T12:22:09.075Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "Supply Chain Compromise: Compromise Software Dependencies and Development Tools",
+      "technique_id": "T1195.001:",
+      "technique_ref": "https://attack.mitre.org/techniques/T1195/001/",
+      "description": "Abuse of Security Assertion Markup Language (SAML) tokens",
+      "effect_refs": [
+        "attack-operator--20a30502-6598-4675-8ba3-77b9968e49c4"
+      ]
+    },
+    {
+      "type": "attack-condition",
+      "id": "attack-condition--acc15bbb-2e07-4ba1-9ce2-c32830b490d1",
+      "spec_version": "2.1",
+      "created": "2023-01-05T12:22:09.075Z",
+      "modified": "2023-01-05T12:22:09.075Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "description": "initial access vectors available",
+      "on_true_refs": [
+        "attack-action--7d0fc1f4-ac42-4cfe-9d1a-0ec486d26c91"
+      ]
+    },
+    {
+      "type": "attack-action",
+      "id": "attack-action--fcd33a1a-eba3-4b9f-bc77-dd75463930d1",
+      "spec_version": "2.1",
+      "created": "2023-01-05T12:22:09.075Z",
+      "modified": "2023-01-05T12:22:09.075Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "Compromise Infrastructure",
+      "technique_id": "T1584",
+      "technique_ref": "https://attack.mitre.org/techniques/T1584/",
+      "description": "Compromise third-party infrastructure, use the Domain Name System (DNS) response to selectively send back new domains or IP addresses for interactive command and control traffic",
+      "asset_refs": [
+        "attack-asset--d98aab6b-3fa5-4cee-9a6e-bb818310e114"
+      ],
+      "effect_refs": [
+        "attack-action--6da2af40-80d1-442a-b2ab-2566e4cebaf0"
+      ]
+    },
+    {
+      "type": "attack-action",
+      "id": "attack-action--472e513c-34ed-4fa2-9538-84461e49a084",
+      "spec_version": "2.1",
+      "created": "2023-01-05T12:22:09.075Z",
+      "modified": "2023-01-05T12:22:09.075Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "Supply Chain Compromise: Compromise Software Supply Chain",
+      "technique_id": "T1195.002",
+      "technique_ref": "https://attack.mitre.org/techniques/T1195/002/",
+      "description": "Leverage a software supply chain compromise of SolarWinds Orion products",
+      "effect_refs": [
+        "attack-operator--20a30502-6598-4675-8ba3-77b9968e49c4"
+      ]
+    },
+    {
+      "type": "attack-condition",
+      "id": "attack-condition--1241f666-43d5-41cd-8957-65e42c019fa9",
+      "spec_version": "2.1",
+      "created": "2023-01-05T12:22:09.075Z",
+      "modified": "2023-01-05T12:22:09.075Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "description": "SolarWinds Orion is compromised",
+      "on_true_refs": [
+        "attack-action--472e513c-34ed-4fa2-9538-84461e49a084"
+      ]
+    },
+    {
+      "type": "attack-operator",
+      "id": "attack-operator--20a30502-6598-4675-8ba3-77b9968e49c4",
+      "spec_version": "2.1",
+      "created": "2023-01-05T12:22:09.075Z",
+      "modified": "2023-01-05T12:22:09.075Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "operator": "AND",
+      "effect_refs": [
+        "attack-action--fcd33a1a-eba3-4b9f-bc77-dd75463930d1"
+      ]
+    },
+    {
+      "type": "attack-asset",
+      "id": "attack-asset--d98aab6b-3fa5-4cee-9a6e-bb818310e114",
+      "spec_version": "2.1",
+      "created": "2023-01-05T12:22:09.075Z",
+      "modified": "2023-01-05T12:22:09.075Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "new domains and IP addresses"
+    },
+    {
+      "type": "attack-action",
+      "id": "attack-action--8c5af807-34e0-4eb8-9a14-1addbbaa1ae1",
+      "spec_version": "2.1",
+      "created": "2023-01-05T12:22:09.075Z",
+      "modified": "2023-01-05T12:22:09.075Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "Dynamic Resolution: Domain Generation Algorithms",
+      "technique_id": "T1568.002",
+      "technique_ref": "https://attack.mitre.org/techniques/T1568/002/",
+      "description": "Make use of Domain Generation Algorithms (DGAs) to dynamically identify a destination domain for command and control traffic rather than relying on a list of static IP addresses or domains",
+      "asset_refs": [
+        "attack-asset--27cab244-2244-4616-9c09-e62b937a3bac"
+      ],
+      "effect_refs": [
+        "attack-action--29e3e807-1740-49a6-9e9b-b4d1c3f7693e"
+      ]
+    },
+    {
+      "type": "attack-asset",
+      "id": "attack-asset--27cab244-2244-4616-9c09-e62b937a3bac",
+      "spec_version": "2.1",
+      "created": "2023-01-05T12:22:09.075Z",
+      "modified": "2023-01-05T12:22:09.075Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "destination domain for C2 traffic"
+    },
+    {
+      "type": "attack-action",
+      "id": "attack-action--29e3e807-1740-49a6-9e9b-b4d1c3f7693e",
+      "spec_version": "2.1",
+      "created": "2023-01-05T12:22:09.075Z",
+      "modified": "2023-01-05T12:22:09.075Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "Data Encoding: Standard Encoding",
+      "technique_id": "T1132.001",
+      "technique_ref": "https://attack.mitre.org/techniques/T1132/001/",
+      "description": "Encode data with a standard data encoding system to make the content of command and control traffic more difficult to detect"
+    },
+    {
+      "type": "attack-operator",
+      "id": "attack-operator--a1a3eb14-2bc9-4aba-bc09-f7685fb2f18e",
+      "spec_version": "2.1",
+      "created": "2023-01-05T12:22:09.075Z",
+      "modified": "2023-01-05T12:22:09.075Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "operator": "AND",
+      "effect_refs": [
+        "attack-action--58a5f40e-8632-4fad-b780-1e8a45aa5044",
+        "attack-action--0914945a-faa4-4bfa-b02f-457a6564e525",
+        "attack-action--65706ba5-1f9a-43b1-a515-51e1c0f42fd8"
+      ]
+    },
+    {
+      "type": "attack-action",
+      "id": "attack-action--58a5f40e-8632-4fad-b780-1e8a45aa5044",
+      "spec_version": "2.1",
+      "created": "2023-01-05T12:22:09.075Z",
+      "modified": "2023-01-05T12:22:09.075Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "Obfuscated Files or Information",
+      "technique_id": "T1027",
+      "technique_ref": "https://attack.mitre.org/techniques/T1027/",
+      "description": "Attempt to make an executable or file difficult to discover or analyze by encrypting, encoding, or otherwise obfuscating its contents on the system or in transit"
+    },
+    {
+      "type": "attack-action",
+      "id": "attack-action--0914945a-faa4-4bfa-b02f-457a6564e525",
+      "spec_version": "2.1",
+      "created": "2023-01-05T12:22:09.075Z",
+      "modified": "2023-01-05T12:22:09.075Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "Obfuscated Files or Information: Steganography",
+      "technique_id": "T1027.003",
+      "technique_ref": "https://attack.mitre.org/techniques/T1027/003",
+      "description": "Negate many common defensive capabilities in detecting malicious activities"
+    },
+    {
+      "type": "attack-action",
+      "id": "attack-action--65706ba5-1f9a-43b1-a515-51e1c0f42fd8",
+      "spec_version": "2.1",
+      "created": "2023-01-05T12:22:09.075Z",
+      "modified": "2023-01-05T12:22:09.075Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "Indicator Removal on Host: File Deletion",
+      "technique_id": "T1070.004",
+      "technique_ref": "https://attack.mitre.org/techniques/T1070/004/",
+      "description": "Delete files left behind by the actions of their intrusion activity"
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--815afb9e-8aa9-44ec-9d4e-948e3819a45b",
+      "spec_version": "2.1",
+      "created": "2023-01-05T12:22:09.076Z",
+      "modified": "2023-01-05T12:22:09.076Z",
+      "relationship_type": "related-to",
+      "source_ref": "attack-operator--cc70281a-527a-4ea2-8da5-621cdd18fa3e",
+      "target_ref": "attack-asset--e7985ec2-d142-44ca-a0a2-e4128de53bd3"
+    }
+  ]
+}

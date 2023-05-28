@@ -1,0 +1,307 @@
+{
+  "type": "bundle",
+  "id": "bundle--ca73d025-6b37-4b03-bc36-040a731f3c88",
+  "spec_version": "2.1",
+  "created": "2023-01-05T12:42:41.533Z",
+  "modified": "2023-01-05T12:42:41.533Z",
+  "objects": [
+    {
+      "type": "extension-definition",
+      "id": "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4",
+      "spec_version": "2.1",
+      "created": "2022-08-02T19:34:35.143Z",
+      "modified": "2022-08-02T19:34:35.143Z",
+      "name": "Attack Flow",
+      "description": "Extends STIX 2.1 with features to create Attack Flows.",
+      "created_by_ref": "identity--fb9c968a-745b-4ade-9b25-c324172197f4",
+      "schema": "https://center-for-threat-informed-defense.github.io/attack-flow/stix/attack-flow-schema-2.0.0.json",
+      "version": "2.0.0",
+      "extension_types": [
+        "new-sdo"
+      ],
+      "external_references": [
+        {
+          "source_name": "Documentation",
+          "description": "Documentation for Attack Flow",
+          "url": "https://center-for-threat-informed-defense.github.io/attack-flow"
+        },
+        {
+          "source_name": "GitHub",
+          "description": "Source code repository for Attack Flow",
+          "url": "https://github.com/center-for-threat-informed-defense/attack-flow"
+        }
+      ]
+    },
+    {
+      "type": "identity",
+      "id": "identity--fb9c968a-745b-4ade-9b25-c324172197f4",
+      "spec_version": "2.1",
+      "created": "2022-08-02T19:34:35.143Z",
+      "modified": "2022-08-02T19:34:35.143Z",
+      "create_by_ref": "identity--fb9c968a-745b-4ade-9b25-c324172197f4",
+      "name": "MITRE Engenuity Center for Threat-Informed Defense",
+      "identity_class": "organization"
+    },
+    {
+      "type": "attack-flow",
+      "id": "attack-flow--ed36d6b5-b4d3-4e75-9450-dfa9e1afdf5b",
+      "spec_version": "2.1",
+      "created": "2022-12-27T03:39:13.040Z",
+      "modified": "2023-01-05T12:42:41.533Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "created_by_ref": "identity--f4c49fe5-3598-4c96-80c0-9c5707adfe3a",
+      "start_refs": [
+        "attack-condition--01e3a304-45d0-4c67-b4ca-c7766a11f7fb"
+      ],
+      "name": "Tesla",
+      "scope": "incident",
+      "external_references": []
+    },
+    {
+      "type": "identity",
+      "id": "identity--f4c49fe5-3598-4c96-80c0-9c5707adfe3a",
+      "spec_version": "2.1",
+      "created": "2023-01-05T12:42:41.533Z",
+      "modified": "2023-01-05T12:42:41.533Z"
+    },
+    {
+      "type": "attack-condition",
+      "id": "attack-condition--01e3a304-45d0-4c67-b4ca-c7766a11f7fb",
+      "spec_version": "2.1",
+      "created": "2023-01-05T12:42:41.533Z",
+      "modified": "2023-01-05T12:42:41.533Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "description": "Kubernetes Dashboard is exposed or unsecured",
+      "on_true_refs": [
+        "attack-action--d6b9ddb6-91a5-4228-b762-13f2ccf6312b"
+      ]
+    },
+    {
+      "type": "attack-action",
+      "id": "attack-action--d6b9ddb6-91a5-4228-b762-13f2ccf6312b",
+      "spec_version": "2.1",
+      "created": "2023-01-05T12:42:41.533Z",
+      "modified": "2023-01-05T12:42:41.533Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "External Remote Services",
+      "technique_id": "T1133",
+      "technique_ref": "https://attack.mitre.org/techniques/T1133/",
+      "description": "Kubernetes Dashboard",
+      "effect_refs": [
+        "attack-action--cd491fd0-cabc-43c2-866a-076fcbdc8c1e",
+        "attack-action--78fd0bdf-27db-4d0d-9e24-c44dbc5e5def"
+      ],
+      "asset_refs": [
+        "attack-asset--f7973efe-7b1e-4cfd-9977-47db5b528159",
+        "attack-asset--95bfe0db-df77-41f9-8c32-b78d346cf1ad"
+      ]
+    },
+    {
+      "type": "attack-action",
+      "id": "attack-action--cd491fd0-cabc-43c2-866a-076fcbdc8c1e",
+      "spec_version": "2.1",
+      "created": "2023-01-05T12:42:41.533Z",
+      "modified": "2023-01-05T12:42:41.533Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "Deploy Container",
+      "technique_id": "T1610",
+      "technique_ref": "https://attack.mitre.org/techniques/T1610/",
+      "description": "Deploy cryptomining container",
+      "asset_refs": [
+        "attack-asset--947b1346-dee1-4a71-974d-546e8a0d48b2"
+      ],
+      "effect_refs": [
+        "attack-action--050b72ae-ae20-4994-b936-19cee815749c"
+      ]
+    },
+    {
+      "type": "attack-action",
+      "id": "attack-action--78fd0bdf-27db-4d0d-9e24-c44dbc5e5def",
+      "spec_version": "2.1",
+      "created": "2023-01-05T12:42:41.533Z",
+      "modified": "2023-01-05T12:42:41.533Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "Unsecured Credentials: Credentials In Files",
+      "technique_id": "T1552.001",
+      "technique_ref": "https://attack.mitre.org/techniques/T1552/001/",
+      "description": "Harvest AWS service credentials.",
+      "effect_refs": [
+        "attack-action--65297447-752d-4dec-8a70-1662a51b811d"
+      ],
+      "asset_refs": [
+        "attack-asset--ab05e6aa-ac4e-4bc6-9e37-0a1d70ac05e6"
+      ]
+    },
+    {
+      "type": "attack-action",
+      "id": "attack-action--050b72ae-ae20-4994-b936-19cee815749c",
+      "spec_version": "2.1",
+      "created": "2023-01-05T12:42:41.533Z",
+      "modified": "2023-01-05T12:42:41.533Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "Resource Highjacking",
+      "technique_id": "T1496",
+      "technique_ref": "https://attack.mitre.org/techniques/T1496/",
+      "description": "Run cryptomining software",
+      "asset_refs": [
+        "attack-asset--a41e8512-22ce-4fd3-af9b-583d0fa8c306"
+      ]
+    },
+    {
+      "type": "attack-action",
+      "id": "attack-action--65297447-752d-4dec-8a70-1662a51b811d",
+      "spec_version": "2.1",
+      "created": "2023-01-05T12:42:41.533Z",
+      "modified": "2023-01-05T12:42:41.533Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "Valid Accounts: Cloud Accounts",
+      "technique_id": "T1078.004",
+      "technique_ref": "https://attack.mitre.org/techniques/T1078/004/",
+      "description": "Use harvested AWS credentials",
+      "asset_refs": [
+        "attack-asset--d71a7307-304b-4168-9306-93c136c08c4e"
+      ],
+      "effect_refs": [
+        "attack-action--71046527-d44a-4db4-aa55-aef9399dd35b"
+      ]
+    },
+    {
+      "type": "attack-asset",
+      "id": "attack-asset--ab05e6aa-ac4e-4bc6-9e37-0a1d70ac05e6",
+      "spec_version": "2.1",
+      "created": "2023-01-05T12:42:41.533Z",
+      "modified": "2023-01-05T12:42:41.533Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "AWS Credentials"
+    },
+    {
+      "type": "attack-asset",
+      "id": "attack-asset--a41e8512-22ce-4fd3-af9b-583d0fa8c306",
+      "spec_version": "2.1",
+      "created": "2023-01-05T12:42:41.533Z",
+      "modified": "2023-01-05T12:42:41.533Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "Cryptocurrency"
+    },
+    {
+      "type": "attack-asset",
+      "id": "attack-asset--947b1346-dee1-4a71-974d-546e8a0d48b2",
+      "spec_version": "2.1",
+      "created": "2023-01-05T12:42:41.533Z",
+      "modified": "2023-01-05T12:42:41.533Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "Kubernetes Container"
+    },
+    {
+      "type": "attack-asset",
+      "id": "attack-asset--95bfe0db-df77-41f9-8c32-b78d346cf1ad",
+      "spec_version": "2.1",
+      "created": "2023-01-05T12:42:41.533Z",
+      "modified": "2023-01-05T12:42:41.533Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "Kubernetes Admin Priv"
+    },
+    {
+      "type": "attack-asset",
+      "id": "attack-asset--f7973efe-7b1e-4cfd-9977-47db5b528159",
+      "spec_version": "2.1",
+      "created": "2023-01-05T12:42:41.533Z",
+      "modified": "2023-01-05T12:42:41.533Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "Kubernetes Cluster"
+    },
+    {
+      "type": "attack-asset",
+      "id": "attack-asset--d71a7307-304b-4168-9306-93c136c08c4e",
+      "spec_version": "2.1",
+      "created": "2023-01-05T12:42:41.533Z",
+      "modified": "2023-01-05T12:42:41.533Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "AWS Access"
+    },
+    {
+      "type": "attack-action",
+      "id": "attack-action--71046527-d44a-4db4-aa55-aef9399dd35b",
+      "spec_version": "2.1",
+      "created": "2023-01-05T12:42:41.533Z",
+      "modified": "2023-01-05T12:42:41.533Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "Data from Cloud Storage Object",
+      "technique_id": "T1530",
+      "technique_ref": "https://attack.mitre.org/techniques/T1530",
+      "description": "Download data from storage bucket",
+      "asset_refs": [
+        "attack-asset--4488b27b-9c55-4bf9-89ee-5f6749f9aab0"
+      ]
+    },
+    {
+      "type": "attack-asset",
+      "id": "attack-asset--4488b27b-9c55-4bf9-89ee-5f6749f9aab0",
+      "spec_version": "2.1",
+      "created": "2023-01-05T12:42:41.533Z",
+      "modified": "2023-01-05T12:42:41.533Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "Data"
+    }
+  ]
+}

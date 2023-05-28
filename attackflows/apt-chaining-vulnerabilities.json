@@ -1,0 +1,360 @@
+{
+  "type": "bundle",
+  "id": "bundle--a5fcb40d-0377-4d27-b515-e297fc7409d0",
+  "spec_version": "2.1",
+  "created": "2023-01-05T12:18:11.499Z",
+  "modified": "2023-01-05T12:18:11.499Z",
+  "objects": [
+    {
+      "type": "extension-definition",
+      "id": "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4",
+      "spec_version": "2.1",
+      "created": "2022-08-02T19:34:35.143Z",
+      "modified": "2022-08-02T19:34:35.143Z",
+      "name": "Attack Flow",
+      "description": "Extends STIX 2.1 with features to create Attack Flows.",
+      "created_by_ref": "identity--fb9c968a-745b-4ade-9b25-c324172197f4",
+      "schema": "https://center-for-threat-informed-defense.github.io/attack-flow/stix/attack-flow-schema-2.0.0.json",
+      "version": "2.0.0",
+      "extension_types": [
+        "new-sdo"
+      ],
+      "external_references": [
+        {
+          "source_name": "Documentation",
+          "description": "Documentation for Attack Flow",
+          "url": "https://center-for-threat-informed-defense.github.io/attack-flow"
+        },
+        {
+          "source_name": "GitHub",
+          "description": "Source code repository for Attack Flow",
+          "url": "https://github.com/center-for-threat-informed-defense/attack-flow"
+        }
+      ]
+    },
+    {
+      "type": "identity",
+      "id": "identity--fb9c968a-745b-4ade-9b25-c324172197f4",
+      "spec_version": "2.1",
+      "created": "2022-08-02T19:34:35.143Z",
+      "modified": "2022-08-02T19:34:35.143Z",
+      "create_by_ref": "identity--fb9c968a-745b-4ade-9b25-c324172197f4",
+      "name": "MITRE Engenuity Center for Threat-Informed Defense",
+      "identity_class": "organization"
+    },
+    {
+      "type": "attack-flow",
+      "id": "attack-flow--d9682bcf-a10b-4d0a-9302-98fe83517548",
+      "spec_version": "2.1",
+      "created": "2023-01-01T01:51:38.878Z",
+      "modified": "2023-01-05T12:18:11.500Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "created_by_ref": "identity--187b8bf5-40b2-486e-bf5c-0cb5e73ed005",
+      "start_refs": [
+        "attack-condition--08eabcfa-c661-431f-a88b-67dcbc4dd7f7"
+      ],
+      "name": "apt-chaining-vulnerabilities",
+      "scope": "incident",
+      "external_references": []
+    },
+    {
+      "type": "identity",
+      "id": "identity--187b8bf5-40b2-486e-bf5c-0cb5e73ed005",
+      "spec_version": "2.1",
+      "created": "2023-01-05T12:18:11.499Z",
+      "modified": "2023-01-05T12:18:11.499Z"
+    },
+    {
+      "type": "attack-condition",
+      "id": "attack-condition--08eabcfa-c661-431f-a88b-67dcbc4dd7f7",
+      "spec_version": "2.1",
+      "created": "2023-01-05T12:18:11.500Z",
+      "modified": "2023-01-05T12:18:11.500Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "description": "elections organisations, critical infrastructure, Fortinet FortiOS VPN vulnerability CVE-2018-13379 (internet-facing)",
+      "on_true_refs": [
+        "attack-action--3a6d98e2-d846-4978-86a2-d8d260f3c070",
+        "attack-action--5911fa87-de00-42d4-9296-ee090859c1a9"
+      ]
+    },
+    {
+      "type": "attack-action",
+      "id": "attack-action--3a6d98e2-d846-4978-86a2-d8d260f3c070",
+      "spec_version": "2.1",
+      "created": "2023-01-05T12:18:11.500Z",
+      "modified": "2023-01-05T12:18:11.500Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "Exploit Public-Facing Application",
+      "technique_id": "T1190",
+      "technique_ref": "https://attack.mitre.org/techniques/T1190/",
+      "description": "Leverage legacy vulnerabilities to gain initial access into systems",
+      "effect_refs": [
+        "attack-operator--e24b0f9f-bd1d-4352-96bd-63769d33b782"
+      ]
+    },
+    {
+      "type": "attack-action",
+      "id": "attack-action--5911fa87-de00-42d4-9296-ee090859c1a9",
+      "spec_version": "2.1",
+      "created": "2023-01-05T12:18:11.500Z",
+      "modified": "2023-01-05T12:18:11.500Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "External Remote Services",
+      "technique_id": "T1133",
+      "technique_ref": "https://attack.mitre.org/techniques/T1133/",
+      "description": "Leverage external-facing remote services to initially access a network",
+      "effect_refs": [
+        "attack-operator--e24b0f9f-bd1d-4352-96bd-63769d33b782"
+      ]
+    },
+    {
+      "type": "attack-operator",
+      "id": "attack-operator--e24b0f9f-bd1d-4352-96bd-63769d33b782",
+      "spec_version": "2.1",
+      "created": "2023-01-05T12:18:11.500Z",
+      "modified": "2023-01-05T12:18:11.500Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "operator": "OR",
+      "effect_refs": [
+        "attack-action--66fc8346-f30a-49ac-8f35-a80ef2799a37"
+      ]
+    },
+    {
+      "type": "vulnerability",
+      "id": "vulnerability--d07daa5e-363c-413c-a609-e625bf6ff254",
+      "spec_version": "2.1",
+      "created": "2023-01-05T12:18:11.500Z",
+      "modified": "2023-01-05T12:18:11.500Z",
+      "name": "Fortinet FortiOS VPN CVE-2018-13379"
+    },
+    {
+      "type": "vulnerability",
+      "id": "vulnerability--2b9a8015-ad86-4837-ba44-ce7d509d6cd2",
+      "spec_version": "2.1",
+      "created": "2023-01-05T12:18:11.500Z",
+      "modified": "2023-01-05T12:18:11.500Z",
+      "name": "Citrix NetScaler CVE-2019-19781"
+    },
+    {
+      "type": "vulnerability",
+      "id": "vulnerability--63bb7144-693a-4141-a642-58bf4da07de0",
+      "spec_version": "2.1",
+      "created": "2023-01-05T12:18:11.500Z",
+      "modified": "2023-01-05T12:18:11.500Z",
+      "name": "MobileIron CVE-2020-15505"
+    },
+    {
+      "type": "vulnerability",
+      "id": "vulnerability--5da0e51a-67d1-45a4-b18b-336451f1bd76",
+      "spec_version": "2.1",
+      "created": "2023-01-05T12:18:11.500Z",
+      "modified": "2023-01-05T12:18:11.500Z",
+      "name": "F5 BIG-IP CVE-2020-5902"
+    },
+    {
+      "type": "vulnerability",
+      "id": "vulnerability--e579a544-1e1b-4dfb-b7f8-f50eeed7e436",
+      "spec_version": "2.1",
+      "created": "2023-01-05T12:18:11.500Z",
+      "modified": "2023-01-05T12:18:11.500Z",
+      "name": "Palo Alto Networks CVE-2020-2021"
+    },
+    {
+      "type": "vulnerability",
+      "id": "vulnerability--8b79c5b7-bf0a-4b38-a475-9636f88c1aa6",
+      "spec_version": "2.1",
+      "created": "2023-01-05T12:18:11.500Z",
+      "modified": "2023-01-05T12:18:11.500Z",
+      "name": "Pulse Secure CVE-2019-11510"
+    },
+    {
+      "type": "attack-asset",
+      "id": "attack-asset--59fb1d45-d91f-46ea-a379-0be7b2721a18",
+      "spec_version": "2.1",
+      "created": "2023-01-05T12:18:11.500Z",
+      "modified": "2023-01-05T12:18:11.500Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "network access gained"
+    },
+    {
+      "type": "attack-action",
+      "id": "attack-action--66fc8346-f30a-49ac-8f35-a80ef2799a37",
+      "spec_version": "2.1",
+      "created": "2023-01-05T12:18:11.500Z",
+      "modified": "2023-01-05T12:18:11.500Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "Valid Accounts",
+      "technique_id": "T1078",
+      "technique_ref": "https://attack.mitre.org/techniques/T1078/",
+      "description": "Obtain AD credentials after leveraging Microsoft Netlogon Remote Protocol Vulnerability CVE-2020-1472",
+      "asset_refs": [
+        "attack-asset--48f6bea3-7dc8-436f-b386-9b11c0315d1f"
+      ],
+      "effect_refs": [
+        "attack-action--71f1ddea-9bdf-42df-b838-5d1288c892ac"
+      ]
+    },
+    {
+      "type": "attack-asset",
+      "id": "attack-asset--48f6bea3-7dc8-436f-b386-9b11c0315d1f",
+      "spec_version": "2.1",
+      "created": "2023-01-05T12:18:11.500Z",
+      "modified": "2023-01-05T12:18:11.500Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "AD credentials"
+    },
+    {
+      "type": "attack-action",
+      "id": "attack-action--71f1ddea-9bdf-42df-b838-5d1288c892ac",
+      "spec_version": "2.1",
+      "created": "2023-01-05T12:18:11.500Z",
+      "modified": "2023-01-05T12:18:11.500Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "alid Accounts: Domain Accounts",
+      "technique_id": "T1078.002",
+      "technique_ref": "https://attack.mitre.org/techniques/T1078/002",
+      "description": "Obtain and abuse credentials of a domain account to perform privileged actions on all AD identity services",
+      "effect_refs": [
+        "attack-action--0dd55797-a53b-4661-bd8c-c68d677742f8"
+      ]
+    },
+    {
+      "type": "attack-action",
+      "id": "attack-action--0dd55797-a53b-4661-bd8c-c68d677742f8",
+      "spec_version": "2.1",
+      "created": "2023-01-05T12:18:11.500Z",
+      "modified": "2023-01-05T12:18:11.500Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "External Remote Services",
+      "technique_id": "T1133",
+      "technique_ref": "https://attack.mitre.org/techniques/T1133/",
+      "description": "Maintain persistence for system access by abusing legitimate accounts to log in via VPN or remote access services",
+      "asset_refs": [
+        "attack-asset--e353ad37-dae5-489a-898f-0f983389e097"
+      ]
+    },
+    {
+      "type": "attack-asset",
+      "id": "attack-asset--e353ad37-dae5-489a-898f-0f983389e097",
+      "spec_version": "2.1",
+      "created": "2023-01-05T12:18:11.500Z",
+      "modified": "2023-01-05T12:18:11.500Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "persistence maintained"
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--fa2b0eb1-05c6-460b-9929-6661654b9623",
+      "spec_version": "2.1",
+      "created": "2023-01-05T12:18:11.500Z",
+      "modified": "2023-01-05T12:18:11.500Z",
+      "relationship_type": "related-to",
+      "source_ref": "attack-operator--e24b0f9f-bd1d-4352-96bd-63769d33b782",
+      "target_ref": "vulnerability--d07daa5e-363c-413c-a609-e625bf6ff254"
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--cf777765-94c3-41eb-b45a-d8bb78416a2c",
+      "spec_version": "2.1",
+      "created": "2023-01-05T12:18:11.500Z",
+      "modified": "2023-01-05T12:18:11.500Z",
+      "relationship_type": "related-to",
+      "source_ref": "attack-operator--e24b0f9f-bd1d-4352-96bd-63769d33b782",
+      "target_ref": "vulnerability--2b9a8015-ad86-4837-ba44-ce7d509d6cd2"
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--42de3efc-2d58-4b7a-8de8-3a94b96c649d",
+      "spec_version": "2.1",
+      "created": "2023-01-05T12:18:11.500Z",
+      "modified": "2023-01-05T12:18:11.500Z",
+      "relationship_type": "related-to",
+      "source_ref": "attack-operator--e24b0f9f-bd1d-4352-96bd-63769d33b782",
+      "target_ref": "vulnerability--63bb7144-693a-4141-a642-58bf4da07de0"
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--a9793d0e-e99c-4fe7-a815-cddd5c73cfe9",
+      "spec_version": "2.1",
+      "created": "2023-01-05T12:18:11.500Z",
+      "modified": "2023-01-05T12:18:11.500Z",
+      "relationship_type": "related-to",
+      "source_ref": "attack-operator--e24b0f9f-bd1d-4352-96bd-63769d33b782",
+      "target_ref": "vulnerability--5da0e51a-67d1-45a4-b18b-336451f1bd76"
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--fc9e0f10-1e46-48d9-9f4e-558a165498f0",
+      "spec_version": "2.1",
+      "created": "2023-01-05T12:18:11.500Z",
+      "modified": "2023-01-05T12:18:11.500Z",
+      "relationship_type": "related-to",
+      "source_ref": "attack-operator--e24b0f9f-bd1d-4352-96bd-63769d33b782",
+      "target_ref": "vulnerability--e579a544-1e1b-4dfb-b7f8-f50eeed7e436"
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--01d01f85-d7df-4cd2-8dce-f262722f98d7",
+      "spec_version": "2.1",
+      "created": "2023-01-05T12:18:11.500Z",
+      "modified": "2023-01-05T12:18:11.500Z",
+      "relationship_type": "related-to",
+      "source_ref": "attack-operator--e24b0f9f-bd1d-4352-96bd-63769d33b782",
+      "target_ref": "vulnerability--8b79c5b7-bf0a-4b38-a475-9636f88c1aa6"
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--6c6bc75a-2b13-4b00-9901-05ee4fa982f9",
+      "spec_version": "2.1",
+      "created": "2023-01-05T12:18:11.500Z",
+      "modified": "2023-01-05T12:18:11.500Z",
+      "relationship_type": "related-to",
+      "source_ref": "attack-operator--e24b0f9f-bd1d-4352-96bd-63769d33b782",
+      "target_ref": "attack-asset--59fb1d45-d91f-46ea-a379-0be7b2721a18"
+    }
+  ]
+}

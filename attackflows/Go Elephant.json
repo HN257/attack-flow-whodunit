@@ -1,0 +1,182 @@
+{
+  "type": "bundle",
+  "id": "bundle--0e881988-8bdb-40ba-940a-dff97ca19a60",
+  "spec_version": "2.1",
+  "created": "2023-01-06T04:36:25.233Z",
+  "modified": "2023-01-06T04:36:25.233Z",
+  "objects": [
+    {
+      "type": "extension-definition",
+      "id": "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4",
+      "spec_version": "2.1",
+      "created": "2022-08-02T19:34:35.143Z",
+      "modified": "2022-08-02T19:34:35.143Z",
+      "name": "Attack Flow",
+      "description": "Extends STIX 2.1 with features to create Attack Flows.",
+      "created_by_ref": "identity--fb9c968a-745b-4ade-9b25-c324172197f4",
+      "schema": "https://center-for-threat-informed-defense.github.io/attack-flow/stix/attack-flow-schema-2.0.0.json",
+      "version": "2.0.0",
+      "extension_types": [
+        "new-sdo"
+      ],
+      "external_references": [
+        {
+          "source_name": "Documentation",
+          "description": "Documentation for Attack Flow",
+          "url": "https://center-for-threat-informed-defense.github.io/attack-flow"
+        },
+        {
+          "source_name": "GitHub",
+          "description": "Source code repository for Attack Flow",
+          "url": "https://github.com/center-for-threat-informed-defense/attack-flow"
+        }
+      ]
+    },
+    {
+      "type": "identity",
+      "id": "identity--fb9c968a-745b-4ade-9b25-c324172197f4",
+      "spec_version": "2.1",
+      "created": "2022-08-02T19:34:35.143Z",
+      "modified": "2022-08-02T19:34:35.143Z",
+      "create_by_ref": "identity--fb9c968a-745b-4ade-9b25-c324172197f4",
+      "name": "MITRE Engenuity Center for Threat-Informed Defense",
+      "identity_class": "organization"
+    },
+    {
+      "type": "attack-flow",
+      "id": "attack-flow--a80d75ca-8498-4161-bebf-7f37e30cbef3",
+      "spec_version": "2.1",
+      "created": "2023-01-06T03:15:32.190Z",
+      "modified": "2023-01-06T04:36:25.234Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "created_by_ref": "identity--71a65709-02d8-481f-b37f-0e5ea3480fd7",
+      "start_refs": [
+        "attack-action--e5ca9795-d65d-4034-b211-b72de434f654"
+      ],
+      "name": "Go Elephant",
+      "scope": "incident",
+      "external_references": []
+    },
+    {
+      "type": "identity",
+      "id": "identity--71a65709-02d8-481f-b37f-0e5ea3480fd7",
+      "spec_version": "2.1",
+      "created": "2023-01-06T04:36:25.233Z",
+      "modified": "2023-01-06T04:36:25.233Z"
+    },
+    {
+      "type": "attack-action",
+      "id": "attack-action--e5ca9795-d65d-4034-b211-b72de434f654",
+      "spec_version": "2.1",
+      "created": "2023-01-06T04:36:25.234Z",
+      "modified": "2023-01-06T04:36:25.234Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "Compromise Infrastructure or T1071.004 Application Layer Protocol- Exploiting government website without configured SPF record",
+      "technique_id": "T1584",
+      "technique_ref": "https://attack.mitre.org/techniques/T1584/",
+      "description": "mdfi.gov.ua did not have a configured SPF record, allowing attackers to impersonate the domain name to send phishing emails.",
+      "effect_refs": [
+        "attack-action--96bb8366-1f5a-4273-9aa0-5af9b4688481"
+      ]
+    },
+    {
+      "type": "attack-action",
+      "id": "attack-action--96bb8366-1f5a-4273-9aa0-5af9b4688481",
+      "spec_version": "2.1",
+      "created": "2023-01-06T04:36:25.234Z",
+      "modified": "2023-01-06T04:36:25.234Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "Phishing- Spear Phishing Email",
+      "technique_id": "T1566",
+      "description": "phishing emails sent from zam@mdfi.gov.ua to ilenko@gng.com.ua. at least from March 23th to March 28th. The email subject is Заборгованість по зарплаті (wage arrears).",
+      "effect_refs": [
+        "attack-action--a2037415-5552-4165-ae60-028140a64283"
+      ]
+    },
+    {
+      "type": "attack-action",
+      "id": "attack-action--a2037415-5552-4165-ae60-028140a64283",
+      "spec_version": "2.1",
+      "created": "2023-01-06T04:36:25.234Z",
+      "modified": "2023-01-06T04:36:25.234Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "Spearphishing Attachment- Malicious Spreadsheet",
+      "technique_id": "T1566.001",
+      "technique_ref": "https://attack.mitre.org/techniques/T1566/001/",
+      "description": "victims open a malicious spreadsheet that contains an embedded macro that drops the first stage payload called \"base-update.exe\". The payload script contains the ‘SaveAs()’ function which calls the decoding function and saves the file to the ‘%Temp’ folder. The spreadsheet has genuine information as bait.",
+      "effect_refs": [
+        "attack-action--c6f22a21-f595-42e3-afb7-0baa7109b55b"
+      ]
+    },
+    {
+      "type": "attack-action",
+      "id": "attack-action--c6f22a21-f595-42e3-afb7-0baa7109b55b",
+      "spec_version": "2.1",
+      "created": "2023-01-06T04:36:25.234Z",
+      "modified": "2023-01-06T04:36:25.234Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "Stage Capabilities- Elephant Dropper",
+      "technique_id": "T1608.001",
+      "technique_ref": "https://www.malwarebytes.com/blog/threat-intelligence/2022/04/new-uac-0056-activity-theres-a-go-elephant-in-the-room",
+      "description": "Simple dropper that deploys further stages. signed with a stolen Microsoft certificate.",
+      "effect_refs": [
+        "attack-action--60a70906-447d-4ebf-9d80-62c1da95646c"
+      ]
+    },
+    {
+      "type": "attack-action",
+      "id": "attack-action--60a70906-447d-4ebf-9d80-62c1da95646c",
+      "spec_version": "2.1",
+      "created": "2023-01-06T04:36:25.234Z",
+      "modified": "2023-01-06T04:36:25.234Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "Data from Local System- Elephant Implant (GrimPlant backdoor)",
+      "technique_id": "T1005",
+      "technique_ref": "https://www.nioguard.com/2022/04/russian-saintbear-group-attacked.html",
+      "description": "communicates with the C2 on port 80. Allocates 200mb and sleeps for 10 seconds.",
+      "effect_refs": [
+        "attack-action--7581a0b7-439f-4c7e-a9bb-eb022487f644"
+      ]
+    },
+    {
+      "type": "attack-action",
+      "id": "attack-action--7581a0b7-439f-4c7e-a9bb-eb022487f644",
+      "spec_version": "2.1",
+      "created": "2023-01-06T04:36:25.234Z",
+      "modified": "2023-01-06T04:36:25.234Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "Data Encoding- Send information to attackers",
+      "technique_id": "T1132",
+      "technique_ref": "https://attack.mitre.org/techniques/T1132/",
+      "description": "All collected information is sent to the attackers's C2 server."
+    }
+  ]
+}

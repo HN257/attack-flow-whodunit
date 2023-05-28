@@ -1,0 +1,638 @@
+{
+  "type": "bundle",
+  "id": "bundle--c3548296-43ed-4348-a4e0-058ae00fcb16",
+  "spec_version": "2.1",
+  "created": "2023-01-05T12:36:18.443Z",
+  "modified": "2023-01-05T12:36:18.443Z",
+  "objects": [
+    {
+      "type": "extension-definition",
+      "id": "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4",
+      "spec_version": "2.1",
+      "created": "2022-08-02T19:34:35.143Z",
+      "modified": "2022-08-02T19:34:35.143Z",
+      "name": "Attack Flow",
+      "description": "Extends STIX 2.1 with features to create Attack Flows.",
+      "created_by_ref": "identity--fb9c968a-745b-4ade-9b25-c324172197f4",
+      "schema": "https://center-for-threat-informed-defense.github.io/attack-flow/stix/attack-flow-schema-2.0.0.json",
+      "version": "2.0.0",
+      "extension_types": [
+        "new-sdo"
+      ],
+      "external_references": [
+        {
+          "source_name": "Documentation",
+          "description": "Documentation for Attack Flow",
+          "url": "https://center-for-threat-informed-defense.github.io/attack-flow"
+        },
+        {
+          "source_name": "GitHub",
+          "description": "Source code repository for Attack Flow",
+          "url": "https://github.com/center-for-threat-informed-defense/attack-flow"
+        }
+      ]
+    },
+    {
+      "type": "identity",
+      "id": "identity--fb9c968a-745b-4ade-9b25-c324172197f4",
+      "spec_version": "2.1",
+      "created": "2022-08-02T19:34:35.143Z",
+      "modified": "2022-08-02T19:34:35.143Z",
+      "create_by_ref": "identity--fb9c968a-745b-4ade-9b25-c324172197f4",
+      "name": "MITRE Engenuity Center for Threat-Informed Defense",
+      "identity_class": "organization"
+    },
+    {
+      "type": "attack-flow",
+      "id": "attack-flow--318b4ddc-7ac2-4641-9f9c-1a885587fa8a",
+      "spec_version": "2.1",
+      "created": "2023-01-01T01:51:38.878Z",
+      "modified": "2023-01-05T12:36:18.444Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "created_by_ref": "identity--f9cc885f-78e5-44ec-888e-adcd0b930833",
+      "start_refs": [
+        "attack-action--f3eb4edc-e6df-4e7d-becb-898915c06a29"
+      ],
+      "name": "cleared-defense-contractor-networks",
+      "scope": "incident",
+      "external_references": []
+    },
+    {
+      "type": "identity",
+      "id": "identity--f9cc885f-78e5-44ec-888e-adcd0b930833",
+      "spec_version": "2.1",
+      "created": "2023-01-05T12:36:18.443Z",
+      "modified": "2023-01-05T12:36:18.443Z"
+    },
+    {
+      "type": "attack-action",
+      "id": "attack-action--f3eb4edc-e6df-4e7d-becb-898915c06a29",
+      "spec_version": "2.1",
+      "created": "2023-01-05T12:36:18.444Z",
+      "modified": "2023-01-05T12:36:18.444Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "Brute Force",
+      "technique_id": "T1110",
+      "technique_ref": "https://attack.mitre.org/techniques/T1110/",
+      "description": "Use brute force techniques to gain access to accounts when passwords are unknown or when password hashes are obtained",
+      "effect_refs": [
+        "attack-action--6dcc0310-1e70-4a05-99fe-3deb3f548556"
+      ]
+    },
+    {
+      "type": "attack-action",
+      "id": "attack-action--6dcc0310-1e70-4a05-99fe-3deb3f548556",
+      "spec_version": "2.1",
+      "created": "2023-01-05T12:36:18.444Z",
+      "modified": "2023-01-05T12:36:18.444Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "Gather Victim Identity Information: Credentials",
+      "technique_id": "T1589.001",
+      "technique_ref": "https://attack.mitre.org/techniques/T1589/001/",
+      "description": "Identify valid account credentials for domain and M365 accounts",
+      "effect_refs": [
+        "attack-action--608be5fa-2b6f-444b-acb0-2c603f3b8289"
+      ],
+      "asset_refs": [
+        "attack-asset--306b1a29-9c13-4d47-ad9d-778a3aab3444",
+        "attack-asset--a1fdc60a-120e-49ae-804b-419c396f7493"
+      ]
+    },
+    {
+      "type": "attack-asset",
+      "id": "attack-asset--306b1a29-9c13-4d47-ad9d-778a3aab3444",
+      "spec_version": "2.1",
+      "created": "2023-01-05T12:36:18.444Z",
+      "modified": "2023-01-05T12:36:18.444Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "domain credentials"
+    },
+    {
+      "type": "attack-asset",
+      "id": "attack-asset--a1fdc60a-120e-49ae-804b-419c396f7493",
+      "spec_version": "2.1",
+      "created": "2023-01-05T12:36:18.444Z",
+      "modified": "2023-01-05T12:36:18.444Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "initial network access"
+    },
+    {
+      "type": "attack-action",
+      "id": "attack-action--608be5fa-2b6f-444b-acb0-2c603f3b8289",
+      "spec_version": "2.1",
+      "created": "2023-01-05T12:36:18.444Z",
+      "modified": "2023-01-05T12:36:18.444Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "Phishing: Spearphishing Link",
+      "technique_id": "T1566.002",
+      "technique_ref": "https://attack.mitre.org/techniques/T1566/002/",
+      "description": "Send spearphishing emails with links to malicious domains",
+      "effect_refs": [
+        "attack-action--1172c3d5-ccc2-4e05-b503-8bbbe733ddcc"
+      ]
+    },
+    {
+      "type": "attack-action",
+      "id": "attack-action--1172c3d5-ccc2-4e05-b503-8bbbe733ddcc",
+      "spec_version": "2.1",
+      "created": "2023-01-05T12:36:18.444Z",
+      "modified": "2023-01-05T12:36:18.444Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "Obfuscated Files or Information",
+      "technique_id": "T1027",
+      "technique_ref": "https://attack.mitre.org/techniques/T1027/",
+      "description": "Use publicly available URL shortening services to mask the link instead of actor-controlled malicious domains to bypass virus and spam scanning tools. This obfuscation technique often promotes a false legitimacy to the email recipient, increasing the probability of a victim's clicking on the link",
+      "effect_refs": [
+        "attack-action--7ed5f468-23d3-4854-9091-45666868290b",
+        "attack-action--072d6810-9355-4c9e-b91a-8fb6d8f077cf"
+      ]
+    },
+    {
+      "type": "attack-action",
+      "id": "attack-action--7ed5f468-23d3-4854-9091-45666868290b",
+      "spec_version": "2.1",
+      "created": "2023-01-05T12:36:18.444Z",
+      "modified": "2023-01-05T12:36:18.444Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "Valid Accounts",
+      "technique_id": "T1078",
+      "technique_ref": "https://attack.mitre.org/techniques/T1078/",
+      "description": "Harvest credentials of existing accounts",
+      "effect_refs": [
+        "attack-operator--cd42aca5-d6b3-4c69-8e38-299c1f090dfc"
+      ]
+    },
+    {
+      "type": "attack-action",
+      "id": "attack-action--072d6810-9355-4c9e-b91a-8fb6d8f077cf",
+      "spec_version": "2.1",
+      "created": "2023-01-05T12:36:18.444Z",
+      "modified": "2023-01-05T12:36:18.444Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "Exploit Public-Facing Application",
+      "technique_id": "T1190",
+      "technique_ref": "https://attack.mitre.org/techniques/T1190/",
+      "description": "Take advantage of known vulnerabilities (e.g., CVE-2020-0688, CVE-2020-17144) on public-facing applications such as VPNs",
+      "effect_refs": [
+        "attack-operator--cd42aca5-d6b3-4c69-8e38-299c1f090dfc"
+      ]
+    },
+    {
+      "type": "attack-operator",
+      "id": "attack-operator--cd42aca5-d6b3-4c69-8e38-299c1f090dfc",
+      "spec_version": "2.1",
+      "created": "2023-01-05T12:36:18.444Z",
+      "modified": "2023-01-05T12:36:18.444Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "operator": "AND",
+      "effect_refs": [
+        "attack-action--62b4a0c5-0a56-4b61-ab91-cdf76ea3cfc4"
+      ]
+    },
+    {
+      "type": "attack-action",
+      "id": "attack-action--c6baa1b9-45e6-4026-bb6c-3f8fddb05133",
+      "spec_version": "2.1",
+      "created": "2023-01-05T12:36:18.444Z",
+      "modified": "2023-01-05T12:36:18.444Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "External Remote Services",
+      "technique_id": "T1133",
+      "technique_ref": "https://attack.mitre.org/techniques/T1133/",
+      "description": "Research vulnerabilities in Fortinet's FortiGate VPN devices, brute-forcing, and leveraging CVE-2018-13379",
+      "effect_refs": [
+        "attack-operator--cd42aca5-d6b3-4c69-8e38-299c1f090dfc"
+      ]
+    },
+    {
+      "type": "attack-asset",
+      "id": "attack-asset--98b260b9-20a4-4fcc-8b8d-9a610627cbe9",
+      "spec_version": "2.1",
+      "created": "2023-01-05T12:36:18.444Z",
+      "modified": "2023-01-05T12:36:18.444Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "remote code execution (RCE) (privileges escalated)"
+    },
+    {
+      "type": "attack-action",
+      "id": "attack-action--62b4a0c5-0a56-4b61-ab91-cdf76ea3cfc4",
+      "spec_version": "2.1",
+      "created": "2023-01-05T12:36:18.444Z",
+      "modified": "2023-01-05T12:36:18.444Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "OS Credential Dumping: NTDS",
+      "technique_id": "T1003.003",
+      "technique_ref": "https://attack.mitre.org/techniques/T1003/003/",
+      "description": "Connect to domain controllers, exfiltrate credentials, access and export copies of the AD database ntds.dit",
+      "asset_refs": [
+        "attack-asset--4520498d-9b80-4612-b454-93a1594f3cb8",
+        "attack-asset--2a8665dc-4bd6-4f07-9ea1-86b4ef03d84d"
+      ],
+      "effect_refs": [
+        "attack-action--ab1eb6d3-686f-4ec4-9be2-4ade3fbe02fb",
+        "attack-action--371bfecc-e115-4c87-9452-7e45fa95ec1c"
+      ]
+    },
+    {
+      "type": "attack-asset",
+      "id": "attack-asset--4520498d-9b80-4612-b454-93a1594f3cb8",
+      "spec_version": "2.1",
+      "created": "2023-01-05T12:36:18.444Z",
+      "modified": "2023-01-05T12:36:18.444Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "AD database ntds.dit"
+    },
+    {
+      "type": "attack-action",
+      "id": "attack-action--ab1eb6d3-686f-4ec4-9be2-4ade3fbe02fb",
+      "spec_version": "2.1",
+      "created": "2023-01-05T12:36:18.444Z",
+      "modified": "2023-01-05T12:36:18.444Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "File and Network Discovery",
+      "technique_id": "T1083",
+      "technique_ref": "https://attack.mitre.org/techniques/T1083/",
+      "description": "Use BloodHound to map the Active Directory (AD)",
+      "effect_refs": [
+        "attack-action--a2b3052c-4685-4274-a237-f87230f9a367"
+      ]
+    },
+    {
+      "type": "attack-action",
+      "id": "attack-action--371bfecc-e115-4c87-9452-7e45fa95ec1c",
+      "spec_version": "2.1",
+      "created": "2023-01-05T12:36:18.444Z",
+      "modified": "2023-01-05T12:36:18.444Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "Domain Trust Discovery",
+      "technique_id": "T1482",
+      "technique_ref": "https://attack.mitre.org/techniques/T1482/",
+      "description": "Gather information on domain trust relationships and use to identify lateral movement opportunities - M365 for example",
+      "effect_refs": [
+        "attack-operator--6ca6449a-7f9c-4b64-a1ce-1079e7973aad"
+      ]
+    },
+    {
+      "type": "attack-action",
+      "id": "attack-action--a2b3052c-4685-4274-a237-f87230f9a367",
+      "spec_version": "2.1",
+      "created": "2023-01-05T12:36:18.444Z",
+      "modified": "2023-01-05T12:36:18.444Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "Valid Accounts: Domain Accounts",
+      "technique_id": "T1078.002",
+      "technique_ref": "https://attack.mitre.org/techniques/T1078/002/",
+      "description": "Use Mimikatz to dump admin credentials from AD",
+      "effect_refs": [
+        "attack-operator--6ca6449a-7f9c-4b64-a1ce-1079e7973aad"
+      ]
+    },
+    {
+      "type": "attack-operator",
+      "id": "attack-operator--6ca6449a-7f9c-4b64-a1ce-1079e7973aad",
+      "spec_version": "2.1",
+      "created": "2023-01-05T12:36:18.444Z",
+      "modified": "2023-01-05T12:36:18.444Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "operator": "AND",
+      "effect_refs": [
+        "attack-action--9cf317c3-c3c1-4f8a-9d9c-f00cfa42e8b8"
+      ]
+    },
+    {
+      "type": "attack-asset",
+      "id": "attack-asset--42152a64-fbd9-4b84-ad7e-5bbcf6406ad2",
+      "spec_version": "2.1",
+      "created": "2023-01-05T12:36:18.444Z",
+      "modified": "2023-01-05T12:36:18.444Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "admin credentials"
+    },
+    {
+      "type": "attack-action",
+      "id": "attack-action--9cf317c3-c3c1-4f8a-9d9c-f00cfa42e8b8",
+      "spec_version": "2.1",
+      "created": "2023-01-05T12:36:18.444Z",
+      "modified": "2023-01-05T12:36:18.444Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "Valid Accounts: Cloud Accounts",
+      "technique_id": "T1078.004",
+      "technique_ref": "https://attack.mitre.org/techniques/T1078/004/",
+      "description": "Gain access to M365 accounts through AD admin credentials",
+      "asset_refs": [
+        "attack-asset--810f791e-35cf-43eb-9425-78e5199f4e35",
+        "attack-asset--66e3ac83-b1ea-4a54-b6e9-1e2ade5a4eb1"
+      ],
+      "effect_refs": [
+        "attack-action--e4f066db-15b5-432c-9d60-e4c9dcece54f"
+      ]
+    },
+    {
+      "type": "attack-asset",
+      "id": "attack-asset--810f791e-35cf-43eb-9425-78e5199f4e35",
+      "spec_version": "2.1",
+      "created": "2023-01-05T12:36:18.444Z",
+      "modified": "2023-01-05T12:36:18.444Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "M365 global admin accounts"
+    },
+    {
+      "type": "attack-asset",
+      "id": "attack-asset--66e3ac83-b1ea-4a54-b6e9-1e2ade5a4eb1",
+      "spec_version": "2.1",
+      "created": "2023-01-05T12:36:18.444Z",
+      "modified": "2023-01-05T12:36:18.444Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "M365 resources"
+    },
+    {
+      "type": "attack-action",
+      "id": "attack-action--e4f066db-15b5-432c-9d60-e4c9dcece54f",
+      "spec_version": "2.1",
+      "created": "2023-01-05T12:36:18.444Z",
+      "modified": "2023-01-05T12:36:18.444Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "Data from Information Repositories: SharePoint",
+      "technique_id": "T1213.002",
+      "technique_ref": "https://attack.mitre.org/techniques/T1213/002/",
+      "description": "Use valid M365 global admin credentials to log into the administrative portal and change permissions of an existing enterprise application to give read access to all SharePoint [page",
+      "asset_refs": [
+        "attack-asset--596a3654-41a6-43e8-b849-154912fd32ec",
+        "attack-asset--57258839-fca8-4fd6-87e2-fca98f5b31fc"
+      ],
+      "effect_refs": [
+        "attack-action--4ad6fc19-b8c6-4987-a348-62d319853ef6"
+      ]
+    },
+    {
+      "type": "attack-asset",
+      "id": "attack-asset--596a3654-41a6-43e8-b849-154912fd32ec",
+      "spec_version": "2.1",
+      "created": "2023-01-05T12:36:18.444Z",
+      "modified": "2023-01-05T12:36:18.444Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "user profiles & emails"
+    },
+    {
+      "type": "attack-asset",
+      "id": "attack-asset--57258839-fca8-4fd6-87e2-fca98f5b31fc",
+      "spec_version": "2.1",
+      "created": "2023-01-05T12:36:18.444Z",
+      "modified": "2023-01-05T12:36:18.444Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "SharePoint pages"
+    },
+    {
+      "type": "attack-action",
+      "id": "attack-action--4ad6fc19-b8c6-4987-a348-62d319853ef6",
+      "spec_version": "2.1",
+      "created": "2023-01-05T12:36:18.444Z",
+      "modified": "2023-01-05T12:36:18.444Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "Valid Accounts: Domain Accounts",
+      "technique_id": "T1078.002",
+      "technique_ref": "https://attack.mitre.org/techniques/T1078/002/",
+      "description": "Abuse domain credentials",
+      "asset_refs": [
+        "attack-asset--defb94a6-47f3-4b45-96e4-2868f6485504"
+      ],
+      "effect_refs": [
+        "attack-action--b67820f1-5db0-4ef7-afae-a427627922ed"
+      ]
+    },
+    {
+      "type": "attack-asset",
+      "id": "attack-asset--defb94a6-47f3-4b45-96e4-2868f6485504",
+      "spec_version": "2.1",
+      "created": "2023-01-05T12:36:18.444Z",
+      "modified": "2023-01-05T12:36:18.444Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "SharePoint pages"
+    },
+    {
+      "type": "attack-action",
+      "id": "attack-action--b67820f1-5db0-4ef7-afae-a427627922ed",
+      "spec_version": "2.1",
+      "created": "2023-01-05T12:36:18.444Z",
+      "modified": "2023-01-05T12:36:18.444Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "Email Collection: Remote Email Collection",
+      "technique_id": "T1114.002",
+      "technique_ref": "https://attack.mitre.org/techniques/T1114/002/",
+      "description": "Use legitimate credentials to exfiltrate emails from the victim's enterprise email system",
+      "asset_refs": [
+        "attack-asset--13df706b-652d-4e05-81f4-e9a711959d3f"
+      ],
+      "effect_refs": [
+        "attack-action--68340511-4a82-4755-88ce-f64dd9ba9869",
+        "attack-action--ccd5a78a-90f9-4e8f-b68e-6b8015e36f8e"
+      ]
+    },
+    {
+      "type": "attack-asset",
+      "id": "attack-asset--13df706b-652d-4e05-81f4-e9a711959d3f",
+      "spec_version": "2.1",
+      "created": "2023-01-05T12:36:18.444Z",
+      "modified": "2023-01-05T12:36:18.444Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "user emails' sensitive information"
+    },
+    {
+      "type": "attack-action",
+      "id": "attack-action--68340511-4a82-4755-88ce-f64dd9ba9869",
+      "spec_version": "2.1",
+      "created": "2023-01-05T12:36:18.444Z",
+      "modified": "2023-01-05T12:36:18.444Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "Proxy: Multi-hop Proxy",
+      "technique_id": "T1090.003",
+      "technique_ref": "https://attack.mitre.org/techniques/T1090/003/",
+      "description": "Routinely use multiple disparate nodes, such as virtual private server (VPSs) as an encrypted proxy, and small office and home office (SOHO) devices as operational nodes, to evade detection and route traffic to the target",
+      "asset_refs": [
+        "attack-asset--d694ebd3-50f5-4fae-8396-cc7722c2a9f6"
+      ]
+    },
+    {
+      "type": "attack-action",
+      "id": "attack-action--ccd5a78a-90f9-4e8f-b68e-6b8015e36f8e",
+      "spec_version": "2.1",
+      "created": "2023-01-05T12:36:18.444Z",
+      "modified": "2023-01-05T12:36:18.444Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "Valid Accounts",
+      "technique_id": "T1078",
+      "technique_ref": "https://attack.mitre.org/techniques/T1078/",
+      "description": "Rely on possession of legitimate credentials, enabling pivoting to other accounts "
+    },
+    {
+      "type": "attack-asset",
+      "id": "attack-asset--d694ebd3-50f5-4fae-8396-cc7722c2a9f6",
+      "spec_version": "2.1",
+      "created": "2023-01-05T12:36:18.444Z",
+      "modified": "2023-01-05T12:36:18.444Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "remote control"
+    },
+    {
+      "type": "attack-asset",
+      "id": "attack-asset--2a8665dc-4bd6-4f07-9ea1-86b4ef03d84d",
+      "spec_version": "2.1",
+      "created": "2023-01-05T12:36:18.444Z",
+      "modified": "2023-01-05T12:36:18.444Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "user credentials"
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--03d962e0-0cb7-4a7c-bc6e-23ab14c91f07",
+      "spec_version": "2.1",
+      "created": "2023-01-05T12:36:18.444Z",
+      "modified": "2023-01-05T12:36:18.444Z",
+      "relationship_type": "related-to",
+      "source_ref": "attack-operator--cd42aca5-d6b3-4c69-8e38-299c1f090dfc",
+      "target_ref": "attack-asset--98b260b9-20a4-4fcc-8b8d-9a610627cbe9"
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--6ce059a1-b57c-4423-a977-7107d469b5cf",
+      "spec_version": "2.1",
+      "created": "2023-01-05T12:36:18.444Z",
+      "modified": "2023-01-05T12:36:18.444Z",
+      "relationship_type": "related-to",
+      "source_ref": "attack-operator--6ca6449a-7f9c-4b64-a1ce-1079e7973aad",
+      "target_ref": "attack-asset--42152a64-fbd9-4b84-ad7e-5bbcf6406ad2"
+    }
+  ]
+}

@@ -1,0 +1,503 @@
+{
+  "type": "bundle",
+  "id": "bundle--35b05ca7-438b-42d9-ad7f-ec46fb00266a",
+  "spec_version": "2.1",
+  "created": "2023-01-05T13:36:55.416Z",
+  "modified": "2023-01-05T13:36:55.416Z",
+  "objects": [
+    {
+      "type": "extension-definition",
+      "id": "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4",
+      "spec_version": "2.1",
+      "created": "2022-08-02T19:34:35.143Z",
+      "modified": "2022-08-02T19:34:35.143Z",
+      "name": "Attack Flow",
+      "description": "Extends STIX 2.1 with features to create Attack Flows.",
+      "created_by_ref": "identity--fb9c968a-745b-4ade-9b25-c324172197f4",
+      "schema": "https://center-for-threat-informed-defense.github.io/attack-flow/stix/attack-flow-schema-2.0.0.json",
+      "version": "2.0.0",
+      "extension_types": [
+        "new-sdo"
+      ],
+      "external_references": [
+        {
+          "source_name": "Documentation",
+          "description": "Documentation for Attack Flow",
+          "url": "https://center-for-threat-informed-defense.github.io/attack-flow"
+        },
+        {
+          "source_name": "GitHub",
+          "description": "Source code repository for Attack Flow",
+          "url": "https://github.com/center-for-threat-informed-defense/attack-flow"
+        }
+      ]
+    },
+    {
+      "type": "identity",
+      "id": "identity--fb9c968a-745b-4ade-9b25-c324172197f4",
+      "spec_version": "2.1",
+      "created": "2022-08-02T19:34:35.143Z",
+      "modified": "2022-08-02T19:34:35.143Z",
+      "create_by_ref": "identity--fb9c968a-745b-4ade-9b25-c324172197f4",
+      "name": "MITRE Engenuity Center for Threat-Informed Defense",
+      "identity_class": "organization"
+    },
+    {
+      "type": "attack-flow",
+      "id": "attack-flow--b84199bc-df5d-4684-89a4-7e6f576bd2a8",
+      "spec_version": "2.1",
+      "created": "2023-01-05T12:17:11.342Z",
+      "modified": "2023-01-05T13:36:55.417Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "created_by_ref": "identity--1df36d1e-e911-4e67-a4bb-104e01d50bea",
+      "start_refs": [
+        "attack-condition--5b9d1299-2365-4673-a98a-8d846d0b12aa"
+      ],
+      "name": "triton-ics",
+      "scope": "incident",
+      "external_references": []
+    },
+    {
+      "type": "identity",
+      "id": "identity--1df36d1e-e911-4e67-a4bb-104e01d50bea",
+      "spec_version": "2.1",
+      "created": "2023-01-05T13:36:55.417Z",
+      "modified": "2023-01-05T13:36:55.417Z"
+    },
+    {
+      "type": "attack-condition",
+      "id": "attack-condition--5b9d1299-2365-4673-a98a-8d846d0b12aa",
+      "spec_version": "2.1",
+      "created": "2023-01-05T13:36:55.417Z",
+      "modified": "2023-01-05T13:36:55.417Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "description": "foreign oil refinery's safety devices is access gained & manipulated",
+      "on_true_refs": [
+        "attack-action--7ca36528-381d-4c8e-a3c0-f0bc874a08ff"
+      ]
+    },
+    {
+      "type": "attack-action",
+      "id": "attack-action--7ca36528-381d-4c8e-a3c0-f0bc874a08ff",
+      "spec_version": "2.1",
+      "created": "2023-01-05T13:36:55.417Z",
+      "modified": "2023-01-05T13:36:55.417Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "Engineering Workstation Compromise",
+      "technique_id": "T0818",
+      "technique_ref": "https://attack.mitre.org/techniques/T0818/",
+      "description": "Compromise workstations within the safety network",
+      "effect_refs": [
+        "attack-action--4707dce2-2e12-4a07-9fa2-091db8465a71",
+        "attack-action--469b3e1f-50f0-4991-a73b-1e7663a1a661"
+      ]
+    },
+    {
+      "type": "attack-action",
+      "id": "attack-action--4707dce2-2e12-4a07-9fa2-091db8465a71",
+      "spec_version": "2.1",
+      "created": "2023-01-05T13:36:55.417Z",
+      "modified": "2023-01-05T13:36:55.417Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "Change Operating Mode",
+      "technique_id": "T0858",
+      "technique_ref": "https://attack.mitre.org/techniques/T0858/",
+      "description": "Halt or run a program through the TriStation protocol",
+      "effect_refs": [
+        "attack-operator--6eddb7f3-9b34-4312-bd5a-eae420f59a17"
+      ]
+    },
+    {
+      "type": "attack-operator",
+      "id": "attack-operator--6eddb7f3-9b34-4312-bd5a-eae420f59a17",
+      "spec_version": "2.1",
+      "created": "2023-01-05T13:36:55.417Z",
+      "modified": "2023-01-05T13:36:55.417Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "operator": "OR",
+      "effect_refs": [
+        "attack-action--d9584f6c-7399-4b15-bdd6-da029de822e3"
+      ]
+    },
+    {
+      "type": "attack-action",
+      "id": "attack-action--469b3e1f-50f0-4991-a73b-1e7663a1a661",
+      "spec_version": "2.1",
+      "created": "2023-01-05T13:36:55.417Z",
+      "modified": "2023-01-05T13:36:55.417Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "Execution through API",
+      "technique_id": "T0871",
+      "technique_ref": "https://attack.mitre.org/techniques/T0871/",
+      "description": "Leverage a custom implementation of the TriStation protocol, which trigger APIs related to program download, program allocation, and program changes",
+      "effect_refs": [
+        "attack-operator--6eddb7f3-9b34-4312-bd5a-eae420f59a17"
+      ]
+    },
+    {
+      "type": "attack-asset",
+      "id": "attack-asset--5ac1cd98-f52d-4529-9dbe-f0fb31e48e16",
+      "spec_version": "2.1",
+      "created": "2023-01-05T13:36:55.417Z",
+      "modified": "2023-01-05T13:36:55.417Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "shut down refinery for several days"
+    },
+    {
+      "type": "attack-action",
+      "id": "attack-action--d9584f6c-7399-4b15-bdd6-da029de822e3",
+      "spec_version": "2.1",
+      "created": "2023-01-05T13:36:55.417Z",
+      "modified": "2023-01-05T13:36:55.417Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "Hooking",
+      "technique_id": "T0874",
+      "technique_ref": "https://attack.mitre.org/techniques/T0874/",
+      "description": "TRITON's injector modifies the address of the handler for a TriStation protocol command so that when the command is received, the payload may be executed instead of normal processing",
+      "effect_refs": [
+        "attack-action--7189f235-d5c2-4bb8-9801-22d12f666cb1"
+      ]
+    },
+    {
+      "type": "attack-action",
+      "id": "attack-action--7189f235-d5c2-4bb8-9801-22d12f666cb1",
+      "spec_version": "2.1",
+      "created": "2023-01-05T13:36:55.417Z",
+      "modified": "2023-01-05T13:36:55.417Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "Modify Controller Tasking",
+      "technique_id": "T0821",
+      "technique_ref": "https://attack.mitre.org/techniques/T0821/",
+      "description": "Some TRITON components are added to the program table on the Tricon so that they are executed by the firmware once each cycle",
+      "effect_refs": [
+        "attack-action--81690fe9-6da5-4b8b-9aec-573e238650c0"
+      ]
+    },
+    {
+      "type": "attack-action",
+      "id": "attack-action--81690fe9-6da5-4b8b-9aec-573e238650c0",
+      "spec_version": "2.1",
+      "created": "2023-01-05T13:36:55.417Z",
+      "modified": "2023-01-05T13:36:55.417Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "Native API",
+      "technique_id": "T0834",
+      "technique_ref": "https://attack.mitre.org/techniques/T0834/",
+      "description": "TRITON's payload takes commands from TsHi.ExplReadRam(Ex), TsHi.ExplWriteRam(Ex), and TsHi.ExplExec functions to perform operations on controller memory and registers using syscalls written in PowerPC shellcode",
+      "effect_refs": [
+        "attack-action--0e124e77-1243-4476-a6d1-125d1071027b",
+        "attack-action--8e3e549f-408e-453f-9f03-59d69208ac39"
+      ]
+    },
+    {
+      "type": "attack-action",
+      "id": "attack-action--0e124e77-1243-4476-a6d1-125d1071027b",
+      "spec_version": "2.1",
+      "created": "2023-01-05T13:36:55.417Z",
+      "modified": "2023-01-05T13:36:55.417Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "Scripting",
+      "technique_id": "T0853",
+      "technique_ref": "https://attack.mitre.org/techniques/T0853/",
+      "description": "Communicate with Triconex Tricon PLCs using its custom Python script. The script uses four Python modules that collectively implement the TriStation protocol via UDP port 1502",
+      "effect_refs": [
+        "attack-operator--9a481120-b61f-411d-a7d8-390a14371a9d"
+      ]
+    },
+    {
+      "type": "attack-action",
+      "id": "attack-action--8e3e549f-408e-453f-9f03-59d69208ac39",
+      "spec_version": "2.1",
+      "created": "2023-01-05T13:36:55.417Z",
+      "modified": "2023-01-05T13:36:55.417Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "Commonly Used Port",
+      "technique_id": "T0885",
+      "technique_ref": "https://attack.mitre.org/techniques/T0885/",
+      "description": "Communicate over a commonly used port to bypass firewalls or network detection systems and to blend in with normal network activity, to avoid more detailed inspection",
+      "effect_refs": [
+        "attack-operator--9a481120-b61f-411d-a7d8-390a14371a9d"
+      ]
+    },
+    {
+      "type": "attack-operator",
+      "id": "attack-operator--9a481120-b61f-411d-a7d8-390a14371a9d",
+      "spec_version": "2.1",
+      "created": "2023-01-05T13:36:55.417Z",
+      "modified": "2023-01-05T13:36:55.417Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "operator": "AND",
+      "effect_refs": [
+        "attack-action--f374892f-9a9b-4217-9610-a463ec9b1cc7"
+      ]
+    },
+    {
+      "type": "attack-action",
+      "id": "attack-action--f374892f-9a9b-4217-9610-a463ec9b1cc7",
+      "spec_version": "2.1",
+      "created": "2023-01-05T13:36:55.417Z",
+      "modified": "2023-01-05T13:36:55.417Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "System Firmware",
+      "technique_id": "T0857",
+      "technique_ref": "https://attack.mitre.org/techniques/T0857/",
+      "description": "TRITON's injector injects the payload into the Tricon PLCs' running firmware",
+      "effect_refs": [
+        "attack-action--8c965760-4329-41ec-b07e-30727190e41f"
+      ]
+    },
+    {
+      "type": "attack-action",
+      "id": "attack-action--8c965760-4329-41ec-b07e-30727190e41f",
+      "spec_version": "2.1",
+      "created": "2023-01-05T13:36:55.417Z",
+      "modified": "2023-01-05T13:36:55.417Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "Exploitation for Privilege Escalation",
+      "technique_id": "T0890",
+      "technique_ref": "https://attack.mitre.org/techniques/T0890/",
+      "description": "Gain supervisor-level access and control system states by exploiting a vulnerability",
+      "effect_refs": [
+        "attack-action--d2cbfd8e-0c7b-4bf8-a6c8-d80b4e4157d5"
+      ]
+    },
+    {
+      "type": "attack-action",
+      "id": "attack-action--d2cbfd8e-0c7b-4bf8-a6c8-d80b4e4157d5",
+      "spec_version": "2.1",
+      "created": "2023-01-05T13:36:55.417Z",
+      "modified": "2023-01-05T13:36:55.417Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "Exploitation for Evasion",
+      "technique_id": "T0820",
+      "technique_ref": "https://attack.mitre.org/techniques/T0820/",
+      "description": "TRITON's injector exploits a vulnerability in the device firmware to escalate privileges and then it disables and (later patches) a firmware RAM/ROM consistency check",
+      "effect_refs": [
+        "attack-action--0fb2b6f9-ae84-47bf-b26a-9471021a5209"
+      ]
+    },
+    {
+      "type": "attack-action",
+      "id": "attack-action--0fb2b6f9-ae84-47bf-b26a-9471021a5209",
+      "spec_version": "2.1",
+      "created": "2023-01-05T13:36:55.417Z",
+      "modified": "2023-01-05T13:36:55.417Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "Indicator Removal on Host",
+      "technique_id": "T0872",
+      "technique_ref": "https://attack.mitre.org/techniques/T0872/",
+      "description": "After running the malicious payload, TRITON's Python script overwrites the malicious payload with a \"dummy\" program",
+      "effect_refs": [
+        "attack-action--df13db46-e443-4ad4-8804-f75da4e8ad10"
+      ]
+    },
+    {
+      "type": "attack-action",
+      "id": "attack-action--df13db46-e443-4ad4-8804-f75da4e8ad10",
+      "spec_version": "2.1",
+      "created": "2023-01-05T13:36:55.417Z",
+      "modified": "2023-01-05T13:36:55.417Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "Masquerading",
+      "technique_id": "T0849",
+      "technique_ref": "https://attack.mitre.org/techniques/T0849/",
+      "description": "TRITON's Python script masquerades as legitimate Triconex software. TRITON's injector masquerades as a standard compiled PowerPC program for the Triconex PLC",
+      "effect_refs": [
+        "attack-action--edb6fc53-8bfe-4932-898c-4780fcd0aaac"
+      ]
+    },
+    {
+      "type": "attack-action",
+      "id": "attack-action--edb6fc53-8bfe-4932-898c-4780fcd0aaac",
+      "spec_version": "2.1",
+      "created": "2023-01-05T13:36:55.417Z",
+      "modified": "2023-01-05T13:36:55.417Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "Remote System Discovery",
+      "technique_id": "T0846",
+      "technique_ref": "https://attack.mitre.org/techniques/T0846/",
+      "description": "TRITON's Python script can autodetect Triconex PLCs on the network by sending a UDP broadcast packet over port 1502",
+      "effect_refs": [
+        "attack-action--32951df2-1f33-4708-928d-d27c0a69899e"
+      ]
+    },
+    {
+      "type": "attack-action",
+      "id": "attack-action--32951df2-1f33-4708-928d-d27c0a69899e",
+      "spec_version": "2.1",
+      "created": "2023-01-05T13:36:55.417Z",
+      "modified": "2023-01-05T13:36:55.417Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "Program Download",
+      "technique_id": "T0843",
+      "technique_ref": "https://attack.mitre.org/techniques/T0843/",
+      "description": "TRITON leverages the TriStation protocol to download programs to the Tricon PLCs",
+      "effect_refs": [
+        "attack-action--77912e5b-006a-42d1-8387-f93453cf17eb"
+      ]
+    },
+    {
+      "type": "attack-action",
+      "id": "attack-action--77912e5b-006a-42d1-8387-f93453cf17eb",
+      "spec_version": "2.1",
+      "created": "2023-01-05T13:36:55.417Z",
+      "modified": "2023-01-05T13:36:55.417Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "Detect Operating Mode",
+      "technique_id": "T0868",
+      "technique_ref": "https://attack.mitre.org/techniques/T0868/",
+      "description": "A TRITON Python module provides string representations of different features of the TriStation protocol, including message and error codes, key position states, and other values returned by the status functions",
+      "effect_refs": [
+        "attack-action--e35f4439-d1e7-42dd-925e-0aa3d32dbeb2"
+      ]
+    },
+    {
+      "type": "attack-action",
+      "id": "attack-action--e35f4439-d1e7-42dd-925e-0aa3d32dbeb2",
+      "spec_version": "2.1",
+      "created": "2023-01-05T13:36:55.417Z",
+      "modified": "2023-01-05T13:36:55.417Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "Program Upload",
+      "technique_id": "T0845",
+      "technique_ref": "https://attack.mitre.org/techniques/T0845/",
+      "description": "TRITON uploads its payload to the Tricon PLCs",
+      "effect_refs": [
+        "attack-action--a8e858f0-2925-42c3-ad6a-fa2fcab9ad9c"
+      ]
+    },
+    {
+      "type": "attack-action",
+      "id": "attack-action--a8e858f0-2925-42c3-ad6a-fa2fcab9ad9c",
+      "spec_version": "2.1",
+      "created": "2023-01-05T13:36:55.417Z",
+      "modified": "2023-01-05T13:36:55.417Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "Unauthorised Command Message",
+      "technique_id": "T0855",
+      "technique_ref": "https://attack.mitre.org/techniques/T0855/",
+      "description": "Use TRITON to prevent the Tricon PLC from functioning appropriately",
+      "effect_refs": [
+        "attack-action--bce58aa4-f34b-4760-906b-59d3f1ed16e5"
+      ]
+    },
+    {
+      "type": "attack-action",
+      "id": "attack-action--bce58aa4-f34b-4760-906b-59d3f1ed16e5",
+      "spec_version": "2.1",
+      "created": "2023-01-05T13:36:55.417Z",
+      "modified": "2023-01-05T13:36:55.417Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "Loss of Safety",
+      "technique_id": "T0880",
+      "technique_ref": "https://attack.mitre.org/techniques/T0880/",
+      "description": "TRITON can reprogram the safety PLC logic to allow unsafe conditions or state to persist"
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--3c555b96-c462-450c-affe-5ee704803f05",
+      "spec_version": "2.1",
+      "created": "2023-01-05T13:36:55.417Z",
+      "modified": "2023-01-05T13:36:55.417Z",
+      "relationship_type": "related-to",
+      "source_ref": "attack-operator--6eddb7f3-9b34-4312-bd5a-eae420f59a17",
+      "target_ref": "attack-asset--5ac1cd98-f52d-4529-9dbe-f0fb31e48e16"
+    }
+  ]
+}

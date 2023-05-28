@@ -1,0 +1,173 @@
+{
+  "type": "bundle",
+  "id": "bundle--4a62fab4-9098-4494-84f4-9d63d3bfb9ae",
+  "spec_version": "2.1",
+  "created": "2023-01-06T05:29:47.165Z",
+  "modified": "2023-01-06T05:29:47.165Z",
+  "objects": [
+    {
+      "type": "extension-definition",
+      "id": "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4",
+      "spec_version": "2.1",
+      "created": "2022-08-02T19:34:35.143Z",
+      "modified": "2022-08-02T19:34:35.143Z",
+      "name": "Attack Flow",
+      "description": "Extends STIX 2.1 with features to create Attack Flows.",
+      "created_by_ref": "identity--fb9c968a-745b-4ade-9b25-c324172197f4",
+      "schema": "https://center-for-threat-informed-defense.github.io/attack-flow/stix/attack-flow-schema-2.0.0.json",
+      "version": "2.0.0",
+      "extension_types": [
+        "new-sdo"
+      ],
+      "external_references": [
+        {
+          "source_name": "Documentation",
+          "description": "Documentation for Attack Flow",
+          "url": "https://center-for-threat-informed-defense.github.io/attack-flow"
+        },
+        {
+          "source_name": "GitHub",
+          "description": "Source code repository for Attack Flow",
+          "url": "https://github.com/center-for-threat-informed-defense/attack-flow"
+        }
+      ]
+    },
+    {
+      "type": "identity",
+      "id": "identity--fb9c968a-745b-4ade-9b25-c324172197f4",
+      "spec_version": "2.1",
+      "created": "2022-08-02T19:34:35.143Z",
+      "modified": "2022-08-02T19:34:35.143Z",
+      "create_by_ref": "identity--fb9c968a-745b-4ade-9b25-c324172197f4",
+      "name": "MITRE Engenuity Center for Threat-Informed Defense",
+      "identity_class": "organization"
+    },
+    {
+      "type": "attack-flow",
+      "id": "attack-flow--5b6d7ae6-d77d-45c6-9c7d-99c4a175e32e",
+      "spec_version": "2.1",
+      "created": "2023-01-06T03:15:32.190Z",
+      "modified": "2023-01-06T05:29:47.165Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "created_by_ref": "identity--cb67b7ee-1cae-429d-a936-ce3b9794d4c6",
+      "start_refs": [
+        "attack-action--85864e85-5a8c-428d-a293-fffd76b92618"
+      ],
+      "name": "matanbuchus",
+      "scope": "incident",
+      "external_references": []
+    },
+    {
+      "type": "identity",
+      "id": "identity--cb67b7ee-1cae-429d-a936-ce3b9794d4c6",
+      "spec_version": "2.1",
+      "created": "2023-01-06T05:29:47.165Z",
+      "modified": "2023-01-06T05:29:47.165Z"
+    },
+    {
+      "type": "attack-action",
+      "id": "attack-action--85864e85-5a8c-428d-a293-fffd76b92618",
+      "spec_version": "2.1",
+      "created": "2023-01-06T05:29:47.165Z",
+      "modified": "2023-01-06T05:29:47.165Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "Phishing T1204 User Execution- Phishing email lure",
+      "tactic_id": "T1566",
+      "technique_id": "T1566",
+      "technique_ref": "https://attack.mitre.org/techniques/T1566/",
+      "description": "Victim clicks email attachment- lures that pretend to be replies to previous email conversations, so they feature a 'Re:' in the subject line.",
+      "asset_refs": [
+        "attack-asset--39522226-6e42-41a5-9ce4-a3b137e44685"
+      ],
+      "effect_refs": [
+        "attack-action--95d2b98b-32e3-4f14-a73e-0b71cd6eaec1"
+      ]
+    },
+    {
+      "type": "attack-asset",
+      "id": "attack-asset--39522226-6e42-41a5-9ce4-a3b137e44685",
+      "spec_version": "2.1",
+      "created": "2023-01-06T05:29:47.165Z",
+      "modified": "2023-01-06T05:29:47.165Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "base-64-encoded"
+    },
+    {
+      "type": "attack-action",
+      "id": "attack-action--95d2b98b-32e3-4f14-a73e-0b71cd6eaec1",
+      "spec_version": "2.1",
+      "created": "2023-01-06T05:29:47.165Z",
+      "modified": "2023-01-06T05:29:47.165Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "Application Layer Protocol- Initiates fake  Adobe Acrobat font catalog update",
+      "technique_id": "T1071",
+      "technique_ref": "https://attack.mitre.org/techniques/T1071/",
+      "description": "Running the MSI installer supposedly initiates an Adobe Acrobat font catalog update that ends with an error message, to distract the victim from what happened behind the scenes.",
+      "effect_refs": [
+        "attack-action--8f7eb850-c241-420d-925b-c3d7ebabfb9f"
+      ]
+    },
+    {
+      "type": "attack-action",
+      "id": "attack-action--8f7eb850-c241-420d-925b-c3d7ebabfb9f",
+      "spec_version": "2.1",
+      "created": "2023-01-06T05:29:47.165Z",
+      "modified": "2023-01-06T05:29:47.165Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "Non-Application Layer Protocol- retrieving payloads from C&C server",
+      "technique_id": "T1095",
+      "technique_ref": "https://attack.mitre.org/techniques/T1095/",
+      "description": "the Matanbuchus payload establishes a connection to the C&C infrastructure to retrieve next-stage payloads- two Cobalt Strike Beacons.",
+      "asset_refs": [
+        "attack-asset--7468418c-bb5a-456a-b487-062022886fbe",
+        "attack-asset--0365f426-bbb5-4850-9154-54a8ac8ea93b"
+      ]
+    },
+    {
+      "type": "attack-asset",
+      "id": "attack-asset--7468418c-bb5a-456a-b487-062022886fbe",
+      "spec_version": "2.1",
+      "created": "2023-01-06T05:29:47.165Z",
+      "modified": "2023-01-06T05:29:47.165Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "installs cobalt strike beacons on target system"
+    },
+    {
+      "type": "attack-asset",
+      "id": "attack-asset--0365f426-bbb5-4850-9154-54a8ac8ea93b",
+      "spec_version": "2.1",
+      "created": "2023-01-06T05:29:47.165Z",
+      "modified": "2023-01-06T05:29:47.165Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "establishes connection with C&C server"
+    }
+  ]
+}

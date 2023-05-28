@@ -1,0 +1,501 @@
+{
+  "type": "bundle",
+  "id": "bundle--8a583338-169b-49be-838e-7fae99630ead",
+  "spec_version": "2.1",
+  "created": "2023-01-05T12:40:26.354Z",
+  "modified": "2023-01-05T12:40:26.354Z",
+  "objects": [
+    {
+      "type": "extension-definition",
+      "id": "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4",
+      "spec_version": "2.1",
+      "created": "2022-08-02T19:34:35.143Z",
+      "modified": "2022-08-02T19:34:35.143Z",
+      "name": "Attack Flow",
+      "description": "Extends STIX 2.1 with features to create Attack Flows.",
+      "created_by_ref": "identity--fb9c968a-745b-4ade-9b25-c324172197f4",
+      "schema": "https://center-for-threat-informed-defense.github.io/attack-flow/stix/attack-flow-schema-2.0.0.json",
+      "version": "2.0.0",
+      "extension_types": [
+        "new-sdo"
+      ],
+      "external_references": [
+        {
+          "source_name": "Documentation",
+          "description": "Documentation for Attack Flow",
+          "url": "https://center-for-threat-informed-defense.github.io/attack-flow"
+        },
+        {
+          "source_name": "GitHub",
+          "description": "Source code repository for Attack Flow",
+          "url": "https://github.com/center-for-threat-informed-defense/attack-flow"
+        }
+      ]
+    },
+    {
+      "type": "identity",
+      "id": "identity--fb9c968a-745b-4ade-9b25-c324172197f4",
+      "spec_version": "2.1",
+      "created": "2022-08-02T19:34:35.143Z",
+      "modified": "2022-08-02T19:34:35.143Z",
+      "create_by_ref": "identity--fb9c968a-745b-4ade-9b25-c324172197f4",
+      "name": "MITRE Engenuity Center for Threat-Informed Defense",
+      "identity_class": "organization"
+    },
+    {
+      "type": "attack-flow",
+      "id": "attack-flow--a6c303aa-7651-451c-9c73-e326b7eaae80",
+      "spec_version": "2.1",
+      "created": "2023-01-01T01:51:38.878Z",
+      "modified": "2023-01-05T12:40:26.354Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "created_by_ref": "identity--22a8fb92-04b9-4cc1-b75e-9973c0a8ec8b",
+      "start_refs": [
+        "attack-condition--6db1d974-8936-4af7-8bcf-a95b5565a9e4"
+      ],
+      "name": "mfa-printnightmare",
+      "scope": "incident",
+      "external_references": []
+    },
+    {
+      "type": "identity",
+      "id": "identity--22a8fb92-04b9-4cc1-b75e-9973c0a8ec8b",
+      "spec_version": "2.1",
+      "created": "2023-01-05T12:40:26.354Z",
+      "modified": "2023-01-05T12:40:26.354Z"
+    },
+    {
+      "type": "attack-condition",
+      "id": "attack-condition--6db1d974-8936-4af7-8bcf-a95b5565a9e4",
+      "spec_version": "2.1",
+      "created": "2023-01-05T12:40:26.354Z",
+      "modified": "2023-01-05T12:40:26.354Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "description": "misconfigured non-governmental organisation account and default MFA protocols is compromised",
+      "on_true_refs": [
+        "attack-action--2b0597ab-0e96-4e13-86d7-7a9834d2bfc0"
+      ]
+    },
+    {
+      "type": "attack-action",
+      "id": "attack-action--2b0597ab-0e96-4e13-86d7-7a9834d2bfc0",
+      "spec_version": "2.1",
+      "created": "2023-01-05T12:40:26.354Z",
+      "modified": "2023-01-05T12:40:26.354Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "Valid Accounts",
+      "technique_id": "T1078",
+      "technique_ref": "https://attack.mitre.org/techniques/T1078/",
+      "description": "Use compromised credentials of existing accounts to gain initial network access",
+      "effect_refs": [
+        "attack-action--90c38c85-c4b5-42f2-ad40-1ee67c47b996"
+      ]
+    },
+    {
+      "type": "attack-action",
+      "id": "attack-action--90c38c85-c4b5-42f2-ad40-1ee67c47b996",
+      "spec_version": "2.1",
+      "created": "2023-01-05T12:40:26.354Z",
+      "modified": "2023-01-05T12:40:26.354Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "OS Credential Dumping: NTDS",
+      "technique_id": "T1003.003",
+      "technique_ref": "https://attack.mitre.org/techniques/T1003/003/",
+      "description": "Use ntdsutil.exe tool to access or create a copy of the Active Directory domain database to enumerate user accounts to steal credential information",
+      "effect_refs": [
+        "attack-action--2183e60e-220b-4536-9af1-e71f512990eb"
+      ],
+      "asset_refs": [
+        "attack-asset--cd88046e-55e2-432e-bcf2-c0ead9bcb0b2",
+        "attack-asset--be0c6d09-0ec8-45a4-83c6-3d620635fd20",
+        "attack-asset--f810e92f-c9b3-4e3c-ba93-b74d68d24a34",
+        "attack-asset--521713fd-c68f-4fbe-be26-3a01ac5ac292"
+      ]
+    },
+    {
+      "type": "attack-asset",
+      "id": "attack-asset--be0c6d09-0ec8-45a4-83c6-3d620635fd20",
+      "spec_version": "2.1",
+      "created": "2023-01-05T12:40:26.354Z",
+      "modified": "2023-01-05T12:40:26.354Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "Duo un-enrolled"
+    },
+    {
+      "type": "attack-asset",
+      "id": "attack-asset--cd88046e-55e2-432e-bcf2-c0ead9bcb0b2",
+      "spec_version": "2.1",
+      "created": "2023-01-05T12:40:26.354Z",
+      "modified": "2023-01-05T12:40:26.354Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "simple, predictable passwords"
+    },
+    {
+      "type": "attack-asset",
+      "id": "attack-asset--521713fd-c68f-4fbe-be26-3a01ac5ac292",
+      "spec_version": "2.1",
+      "created": "2023-01-05T12:40:26.354Z",
+      "modified": "2023-01-05T12:40:26.354Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "enabled in Active Directory"
+    },
+    {
+      "type": "attack-asset",
+      "id": "attack-asset--f810e92f-c9b3-4e3c-ba93-b74d68d24a34",
+      "spec_version": "2.1",
+      "created": "2023-01-05T12:40:26.354Z",
+      "modified": "2023-01-05T12:40:26.354Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "long inactivity period"
+    },
+    {
+      "type": "attack-action",
+      "id": "attack-action--2183e60e-220b-4536-9af1-e71f512990eb",
+      "spec_version": "2.1",
+      "created": "2023-01-05T12:40:26.354Z",
+      "modified": "2023-01-05T12:40:26.354Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "Brute Force: Password Guessing",
+      "technique_id": "T1110.001",
+      "technique_ref": "https://attack.mitre.org/techniques/T1110/001/",
+      "description": "Guess passwords to attempt access to accounts",
+      "effect_refs": [
+        "attack-action--14ee5d2b-f332-4e62-a5f1-82601f4d596b"
+      ],
+      "asset_refs": [
+        "attack-asset--1e82fb92-f4ac-4696-8289-74f8f41e5bce"
+      ]
+    },
+    {
+      "type": "attack-action",
+      "id": "attack-action--14ee5d2b-f332-4e62-a5f1-82601f4d596b",
+      "spec_version": "2.1",
+      "created": "2023-01-05T12:40:26.354Z",
+      "modified": "2023-01-05T12:40:26.354Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "Account Manipulation: Device Registration",
+      "technique_id": "T1098.005",
+      "technique_ref": "https://attack.mitre.org/techniques/T1098/005/",
+      "description": "Enrol a new device in the organisation's Duo MFA",
+      "effect_refs": [
+        "attack-action--facbe396-95da-48ef-af4b-d537d4196a6e"
+      ],
+      "asset_refs": [
+        "attack-asset--5ad74b55-a9f7-43a2-9abb-68a7f9ec416a"
+      ]
+    },
+    {
+      "type": "attack-action",
+      "id": "attack-action--facbe396-95da-48ef-af4b-d537d4196a6e",
+      "spec_version": "2.1",
+      "created": "2023-01-05T12:40:26.354Z",
+      "modified": "2023-01-05T12:40:26.354Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "Exploitation for Privilege Escalation",
+      "technique_id": "T1068",
+      "technique_ref": "https://attack.mitre.org/techniques/T1068/",
+      "description": "Perform privilege escalation via exploitation of the \"PrintNightmare\" vulnerability (CVE-2021-34527)",
+      "asset_refs": [
+        "attack-asset--48da8eea-254f-4e30-93a3-e6f996979e43"
+      ],
+      "effect_refs": [
+        "attack-action--4be46d72-b37d-438f-8118-dfd9bba967d2"
+      ]
+    },
+    {
+      "type": "attack-asset",
+      "id": "attack-asset--1e82fb92-f4ac-4696-8289-74f8f41e5bce",
+      "spec_version": "2.1",
+      "created": "2023-01-05T12:40:26.354Z",
+      "modified": "2023-01-05T12:40:26.354Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "account access"
+    },
+    {
+      "type": "attack-asset",
+      "id": "attack-asset--5ad74b55-a9f7-43a2-9abb-68a7f9ec416a",
+      "spec_version": "2.1",
+      "created": "2023-01-05T12:40:26.354Z",
+      "modified": "2023-01-05T12:40:26.354Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "gain network access re-enrolment of a device for dormant accounts"
+    },
+    {
+      "type": "attack-asset",
+      "id": "attack-asset--48da8eea-254f-4e30-93a3-e6f996979e43",
+      "spec_version": "2.1",
+      "created": "2023-01-05T12:40:26.354Z",
+      "modified": "2023-01-05T12:40:26.354Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "administrator privileges"
+    },
+    {
+      "type": "attack-action",
+      "id": "attack-action--4be46d72-b37d-438f-8118-dfd9bba967d2",
+      "spec_version": "2.1",
+      "created": "2023-01-05T12:40:26.354Z",
+      "modified": "2023-01-05T12:40:26.354Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "Remote System Discovery",
+      "technique_id": "T1018",
+      "technique_ref": "https://attack.mitre.org/techniques/T1018/",
+      "description": "Use ping.exe to test network connectivity to a remote host",
+      "asset_refs": [
+        "attack-asset--486e1557-2e16-4672-8f55-c740057a52be"
+      ],
+      "effect_refs": [
+        "attack-action--0d6a21c4-f829-47aa-8699-a5d6b4ca34ed"
+      ]
+    },
+    {
+      "type": "attack-asset",
+      "id": "attack-asset--486e1557-2e16-4672-8f55-c740057a52be",
+      "spec_version": "2.1",
+      "created": "2023-01-05T12:40:26.354Z",
+      "modified": "2023-01-05T12:40:26.354Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "network discovery"
+    },
+    {
+      "type": "attack-action",
+      "id": "attack-action--0d6a21c4-f829-47aa-8699-a5d6b4ca34ed",
+      "spec_version": "2.1",
+      "created": "2023-01-05T12:40:26.354Z",
+      "modified": "2023-01-05T12:40:26.354Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "Archive Collected Data: Archive via Utility",
+      "technique_id": "T1560.001",
+      "technique_ref": "https://attack.mitre.org/techniques/T1560/001/",
+      "description": "Seek to compromise MFA security protocols using rar.exe",
+      "asset_refs": [
+        "attack-asset--7ca0506a-9c84-42ac-bc0b-1232fc2a72c8",
+        "attack-asset--ed4d4e0b-ba2e-41e3-ba67-40c23cf6ef41"
+      ],
+      "effect_refs": [
+        "attack-action--ac158fe1-a7b3-4bec-a6ff-899a8c6d0595"
+      ]
+    },
+    {
+      "type": "attack-asset",
+      "id": "attack-asset--7ca0506a-9c84-42ac-bc0b-1232fc2a72c8",
+      "spec_version": "2.1",
+      "created": "2023-01-05T12:40:26.354Z",
+      "modified": "2023-01-05T12:40:26.354Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "account access"
+    },
+    {
+      "type": "attack-asset",
+      "id": "attack-asset--ed4d4e0b-ba2e-41e3-ba67-40c23cf6ef41",
+      "spec_version": "2.1",
+      "created": "2023-01-05T12:40:26.354Z",
+      "modified": "2023-01-05T12:40:26.354Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "information access"
+    },
+    {
+      "type": "attack-action",
+      "id": "attack-action--ac158fe1-a7b3-4bec-a6ff-899a8c6d0595",
+      "spec_version": "2.1",
+      "created": "2023-01-05T12:40:26.354Z",
+      "modified": "2023-01-05T12:40:26.354Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "Modify Authentication Process",
+      "technique_id": "T1556",
+      "technique_ref": "https://attack.mitre.org/techniques/T1556/",
+      "description": "Modify a domain controller file, c:\\windows\\system32\\drivers\\etc\\hosts, redirecting Duo MFA calls to localhost instead of the Duo server",
+      "asset_refs": [
+        "attack-asset--f5724c77-f1b1-46bc-b3e2-8330b69f2ec0",
+        "attack-asset--2310596a-05b5-4931-87e9-e25ae51a3501",
+        "attack-asset--d3ed35bc-ee81-4f7e-a362-67073fa6df8e"
+      ],
+      "effect_refs": [
+        "attack-action--09074935-51aa-4c1b-be72-979606e4da35"
+      ]
+    },
+    {
+      "type": "attack-asset",
+      "id": "attack-asset--f5724c77-f1b1-46bc-b3e2-8330b69f2ec0",
+      "spec_version": "2.1",
+      "created": "2023-01-05T12:40:26.354Z",
+      "modified": "2023-01-05T12:40:26.354Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "MFA calls redirected"
+    },
+    {
+      "type": "attack-asset",
+      "id": "attack-asset--2310596a-05b5-4931-87e9-e25ae51a3501",
+      "spec_version": "2.1",
+      "created": "2023-01-05T12:40:26.354Z",
+      "modified": "2023-01-05T12:40:26.354Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "disable MFA for active domain accounts"
+    },
+    {
+      "type": "attack-asset",
+      "id": "attack-asset--d3ed35bc-ee81-4f7e-a362-67073fa6df8e",
+      "spec_version": "2.1",
+      "created": "2023-01-05T12:40:26.354Z",
+      "modified": "2023-01-05T12:40:26.354Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "take advantage of \"fail open\""
+    },
+    {
+      "type": "attack-action",
+      "id": "attack-action--09074935-51aa-4c1b-be72-979606e4da35",
+      "spec_version": "2.1",
+      "created": "2023-01-05T12:40:26.354Z",
+      "modified": "2023-01-05T12:40:26.354Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "External Remote Services",
+      "technique_id": "T1133",
+      "technique_ref": "https://attack.mitre.org/techniques/T1133/",
+      "description": "Authenticate to the victim's VPN as non-administrator users and make Remote Desktop Protocol (RDP) connections to Windows domain controllers",
+      "asset_refs": [
+        "attack-asset--b1bef063-9257-4abe-acc5-e402309150fe",
+        "attack-asset--7307d295-7136-4d2a-a1a8-b053c656b672"
+      ],
+      "effect_refs": [
+        "attack-action--8906db95-ef54-4ee9-b2a8-bd5f9658dea6"
+      ]
+    },
+    {
+      "type": "attack-asset",
+      "id": "attack-asset--b1bef063-9257-4abe-acc5-e402309150fe",
+      "spec_version": "2.1",
+      "created": "2023-01-05T12:40:26.354Z",
+      "modified": "2023-01-05T12:40:26.354Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "bypass MFA for newly compromised accounts"
+    },
+    {
+      "type": "attack-asset",
+      "id": "attack-asset--7307d295-7136-4d2a-a1a8-b053c656b672",
+      "spec_version": "2.1",
+      "created": "2023-01-05T12:40:26.354Z",
+      "modified": "2023-01-05T12:40:26.354Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "leveraged internal Windows utilities"
+    },
+    {
+      "type": "attack-action",
+      "id": "attack-action--8906db95-ef54-4ee9-b2a8-bd5f9658dea6",
+      "spec_version": "2.1",
+      "created": "2023-01-05T12:40:26.354Z",
+      "modified": "2023-01-05T12:40:26.354Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "Modify Registry",
+      "technique_id": "T1112",
+      "technique_ref": "https://attack.mitre.org/techniques/T1112/",
+      "description": "Use regedit.exe to hide configuration information, remove information as part of cleaning up, modify registry of a remote system as part of lateral movement"
+    }
+  ]
+}
