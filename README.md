@@ -19,7 +19,9 @@ folder contains `whodunit` code from https://gitlab.com/bontchev/whodunit with m
 ***run the code:***
 Use the command 
 
-```python whodunit-Hattie.py [-h] [-v] [-n NUMGROUPS] [-b] [-u] [-d] FILE_PATH_OF_TECHNIQUES_LIST```
+```
+python whodunit-Hattie.py [-h] [-v] [-n NUMGROUPS] [-b] [-u] [-d] FILE_PATH_OF_TECHNIQUES_LIST
+```
 
 * input file must be of extension `.txt` only
 * text file contains list of techniques used in attack
