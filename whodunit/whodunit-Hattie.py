@@ -70,10 +70,6 @@ def get_options():
 
 # original code only reads .txt file
 def read_report(report_file, all_techniques, verbose):
-    #read result file produced by ml-package
-    # xlsx = pd.ExcelFile('../ml-package/_result.xlsx')
-    # result = pd.read_excel(xlsx, 'Sheet1')
-    # result.to_csv('result.txt', header=False, index=False)
     print('Processing report file "{}"...'.format(report_file))
     with open(report_file, encoding="utf-8") as f:
         data = f.readlines()
@@ -123,11 +119,6 @@ def get_groups_and_techniques(attack, techniques):
         # append duplicates-removed list of parent techniques to techIDs
         techIDs += set(parent_techniques)
         return techIDs
-    
-    # # original
-    # def get_techniques(groupObj):
-    #     mergedTechsAndSubs = groupObj.techniques + groupObj.sub_techniques
-    #     return [t.id for t in mergedTechsAndSubs]
 
     groups = []
     max_name = 0
@@ -140,31 +131,11 @@ def get_groups_and_techniques(attack, techniques):
         the_techniques = set(get_techniques(group))
         the_group["techniques"] = the_techniques
         common_techniques = the_techniques.intersection(techniques)
-        # techniques var is list given
-        # the_techniques var is what being compared
-        # print("hello")
-        # print(the_group["techniques"])
-        # print(techniques)
-        # print out the list of common techniques if any
-        # if len(common_techniques) > 0:
-        #     print("Common techniques with threat actor {}:".format(group.name))
-        #     for technique in sorted(common_techniques):
-        #         print(technique)
-        #     print()
-        # not intersection - TODO: think about how to extract the missing techniques in report
-        # 
-        # missing_techniques = the_techniques.difference(techniques).union(techniques.difference(the_techniques))
-        # missing = missing_techniques.intersection(techniques)
         missing = techniques.difference(the_techniques)
-        # if len(missing) > 0:
-        #     print("Missing techniques from threat actor {}:".format(group.name))
-        #     for technique in sorted(missing):
-        #         print(technique)
         the_group["confidence"] = len(common_techniques) * 100.0 / len(techniques)
         the_group["number of missing techniques"] = len(missing)
         the_group["missing techniques"] = techniques.difference(the_techniques)
         groups.append(the_group)
-        # print(the_group)
     return groups, max_name
 
 
