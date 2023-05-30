@@ -186,11 +186,18 @@ def match_groups(groups, num_groups, max_name, techniques):
         print("The APT group", end="")
     print(" with the least missing techniques number:")
     for group in sorted(least_missing_techniques_groups, key=lambda x: (x["number of missing techniques"], x["id"])):
-        print(
-            "{} ({:<{width}}): {:>6d} ({})".format(
-                group["id"], group["name"], group["number of missing techniques"], group["missing techniques"], width=max_name
+        if group["number of missing techniques"] == 0:
+            print(
+                "{} ({:<{width}}): {:>6d}".format(
+                    group["id"], group["name"], group["number of missing techniques"], width=max_name
+                )
             )
-        )
+        else:
+            print(
+                "{} ({:<{width}}): {:>6d} ({})".format(
+                    group["id"], group["name"], group["number of missing techniques"], group["missing techniques"], width=max_name
+                )
+            )
     print()
 
     # print missing score of unmatched techniques
